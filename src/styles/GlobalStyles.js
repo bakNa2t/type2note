@@ -16,8 +16,8 @@ const GlobalStyles = createGlobalStyle`
 
     &.dark-mode {
         --color-blue-dark: #0070f3;
-        --color-blue-zola-600: #393a4c;
-        --color-blue-zola-700: #25273c;
+        --color-blue-zola-600: #25273c;
+        --color-blue-zola-700: #393a4c;
         --color-blue-light-200: #e4e5f1;
         --color-blue-light-300: #c2c2c2;
         --color-blue-light-700: #777a92;
