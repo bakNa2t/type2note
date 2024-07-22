@@ -49,7 +49,7 @@ body {
     font-size: 1.6rem;
 
     font-family: 'Fira Code', monospace;
-    background-color: var(--color-blue-dark);
+    background-color: var(--color-blue-zola-700);
     color: var(--color-blue-light-200);
 }
 
