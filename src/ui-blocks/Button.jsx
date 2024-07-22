@@ -7,6 +7,7 @@ const StyledButton = styled.button`
   align-items: center;
 
   font-size: 2rem;
+  padding: 1rem;
   border: none;
   background-color: transparent;
   color: var(--color-blue-light-200);
