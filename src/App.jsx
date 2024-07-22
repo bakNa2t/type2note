@@ -1,12 +1,13 @@
 import { CloseOutlined } from "@ant-design/icons";
 import GlobalStyles from "./styles/GlobalStyles";
 import Button from "./ui-blocks/Button";
+import Header from "./ui-blocks/Header";
 
 function App() {
   return (
     <>
       <GlobalStyles />
-      <h1>Welcome to Type 2 Note</h1>
+      <Header />
       <Button>
         <CloseOutlined />
       </Button>
