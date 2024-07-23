@@ -10,6 +10,10 @@ const StyledHeader = styled.header`
   margin-bottom: 2rem;
 
   padding: 2rem 5rem;
+
+  @media screen and (max-width: 768px) {
+    padding: 2rem;
+  }
 `;
 
 const Logo = styled.div`

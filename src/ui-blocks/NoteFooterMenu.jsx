@@ -1,13 +1,25 @@
 import styled from "styled-components";
 
+import NoteFilter from "./NoteFilter";
+import Button from "./Button";
+
 const StyledNoteFooterMenu = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 3rem;
-  padding: 1.5rem;
+  padding: 0 1.5rem;
   background-color: var(--color-blue-zola-600);
   border-radius: 0 0 1rem 1rem;
+`;
+
+const NoteAmount = styled.p`
+  font-weight: 700;
+
+  & span {
+    font-weight: 400;
+    font-size: 1.2rem;
+    font-style: italic;
+  }
 `;
 
 function NoteFooterMenu() {
@@ -15,7 +27,11 @@ function NoteFooterMenu() {
 
   return (
     <StyledNoteFooterMenu>
-      <p>{amountNote} notes left</p>
+      <NoteAmount>
+        {amountNote} <span>notes left</span>
+      </NoteAmount>
+      <NoteFilter />
+      <Button>Clear completed</Button>
     </StyledNoteFooterMenu>
   );
 }
