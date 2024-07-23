@@ -7,7 +7,7 @@ const StyledNoteField = styled.ul`
   display: flex;
   flex-direction: column;
   background-color: var(--color-blue-zola-600);
-  border-radius: 1rem;
+  border-radius: 1rem 1rem 0 0;
   padding: 1rem;
 `;
 
