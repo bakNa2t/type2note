@@ -2,9 +2,13 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 
 const StyledAppLayout = styled.div`
-  max-width: 40rem;
+  max-width: 50rem;
   margin: auto;
-  padding: 3rem 1rem 1rem;
+  padding: 1rem;
+
+  @media screen and (max-width: 768px) {
+    padding: 2rem;
+  }
 `;
 
 function AppLayout({ children }) {
