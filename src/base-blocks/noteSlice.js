@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   notes: JSON.parse(localStorage.getItem("notes")) || [],
-  filter: "all",
+  //   filter: "all",
 };
 
 const noteSlice = createSlice({
@@ -28,4 +28,5 @@ const noteSlice = createSlice({
 });
 
 export const { addNote } = noteSlice.actions;
+
 export default noteSlice.reducer;

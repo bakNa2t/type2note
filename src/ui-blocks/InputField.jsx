@@ -1,6 +1,11 @@
-import styled from "styled-components";
-import Button from "./Button";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { EnterOutlined } from "@ant-design/icons";
+import styled from "styled-components";
+
+import Button from "./Button";
+
+import { addNote } from "../base-blocks/noteSlice";
 
 const StyledInputField = styled.form`
   display: flex;
@@ -39,15 +44,27 @@ const Input = styled.input`
 `;
 
 function InputField() {
+  const [createNote, setCreateNote] = useState("");
+  const dispatch = useDispatch();
+
+  function handleInput(e) {
+    e.preventDefault();
+
+    if (!createNote) return;
+
+    dispatch(addNote(createNote));
+    setCreateNote("");
+  }
+
   return (
-    <StyledInputField>
+    <StyledInputField onSubmit={handleInput}>
       <InputWrapper>
         <Input
           type="text"
           placeholder="Add a new note..."
-          name="note"
-          value={""}
-          onChange={() => {}}
+          name="create-note"
+          value={createNote}
+          onChange={(e) => setCreateNote(e.target.value)}
         />
         <IconWrapper>
           <Button>
