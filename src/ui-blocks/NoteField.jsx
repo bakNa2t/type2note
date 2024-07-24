@@ -25,7 +25,6 @@ const NoteItem = styled.li`
 const NoteText = styled.p`
   width: 100%;
   font-size: clamp(1.4rem, 3vw, 1.2rem);
-  word-break: break-all;
 `;
 
 function NoteField() {
@@ -33,16 +32,6 @@ function NoteField() {
     <StyledNoteField>
       <NoteItem>
         <CheckboxCustom />
-        <NoteText>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,
-          quis?
-        </NoteText>
-        <Button>
-          <CloseOutlined />
-        </Button>
-      </NoteItem>
-
-      <NoteItem>
         <NoteText>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,
           quis?
