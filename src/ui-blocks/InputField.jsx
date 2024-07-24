@@ -13,7 +13,20 @@ const StyledInputField = styled.form`
 `;
 
 const InputWrapper = styled.div`
+  position: relative;
   width: 100%;
+`;
+
+const IconWrapper = styled.div`
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  font-size: 2rem;
+
+  & > button {
+    padding: 0.5rem;
+  }
 `;
 
 const Input = styled.input`
@@ -35,10 +48,12 @@ function InputField() {
           value={""}
           onChange={() => {}}
         />
+        <IconWrapper>
+          <Button>
+            <EnterOutlined />
+          </Button>
+        </IconWrapper>
       </InputWrapper>
-      <Button>
-        <EnterOutlined />
-      </Button>
     </StyledInputField>
   );
 }
