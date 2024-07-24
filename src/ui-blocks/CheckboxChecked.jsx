@@ -2,6 +2,10 @@ import styled from "styled-components";
 
 const CheckboxChecked = styled.span`
   position: relative;
+  display: inline-block;
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
   border: 2px solid transparent;
   background: var(--background-gradient) border-box;
 

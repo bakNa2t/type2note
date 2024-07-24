@@ -1,4 +1,6 @@
+import { useState } from "react";
 import styled from "styled-components";
+import CheckboxChecked from "./CheckboxChecked";
 
 const StyledCheckboxCustom = styled.button`
   display: flex;
@@ -15,16 +17,13 @@ const StyledCheckboxCustom = styled.button`
   }
 `;
 
-const Circle = styled.span`
+const CheckboxCircle = styled.span`
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: inline-block;
+  border-radius: 50%;
   height: 2rem;
   width: 2rem;
-  display: inline-block;
   border: 2px solid var(--color-blue-light-700);
-  border-radius: 50%;
   z-index: 100;
 
   &:hover {
@@ -39,9 +38,11 @@ const Circle = styled.span`
 `;
 
 function CheckboxCustom() {
+  const [checked, setChecked] = useState(false);
+
   return (
-    <StyledCheckboxCustom>
-      <Circle />
+    <StyledCheckboxCustom onClick={() => setChecked(!checked)}>
+      {checked ? <CheckboxCircle /> : <CheckboxChecked />}
     </StyledCheckboxCustom>
   );
 }
