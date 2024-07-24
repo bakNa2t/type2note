@@ -28,7 +28,7 @@ function Header() {
   return (
     <StyledHeader>
       <Logo>Type 2 Note</Logo>
-      <Button>
+      <Button size="xl">
         <SunOutlined />
       </Button>
     </StyledHeader>

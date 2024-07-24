@@ -11,9 +11,9 @@ const StyledNoteFilter = styled.div`
 function NoteFilter() {
   return (
     <StyledNoteFilter>
-      <Button>All</Button>
-      <Button>Active</Button>
-      <Button>Completed</Button>
+      <Button size="xs">All</Button>
+      <Button size="xs">Active</Button>
+      <Button size="xs">Completed</Button>
     </StyledNoteFilter>
   );
 }

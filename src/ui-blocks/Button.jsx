@@ -1,27 +1,45 @@
-import styled from "styled-components";
-import PropTypes from "prop-types";
+import styled, { css } from "styled-components";
 
-const StyledButton = styled.button`
+// import PropTypes from "prop-types";
+
+const sizes = {
+  xs: css`
+    font-size: 1.2rem;
+    padding: 0.5rem;
+  `,
+  sm: css`
+    font-size: 1.4rem;
+    padding: 0.7rem;
+  `,
+  md: css`
+    font-size: 1.6rem;
+    padding: 0.9rem;
+  `,
+  lg: css`
+    font-size: 1.8rem;
+    padding: 1.1rem;
+  `,
+  xl: css`
+    font-size: 2rem;
+    padding: 1.3rem;
+  `,
+};
+
+const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
 
-  font-size: 2rem;
-  padding: 1rem;
+  ${(props) => sizes[props.size]}
+
   border: none;
   background-color: transparent;
   color: var(--color-blue-light-200);
 
   &:hover {
-    color: var(--color-blue-light-300);
+    color: var(--color-blue-light-700);
+    background-color: var(--color-blue-light-200);
   }
 `;
-
-function Button({ children }) {
-  Button.propTypes = {
-    children: PropTypes.node,
-  };
-  return <StyledButton>{children}</StyledButton>;
-}
 
 export default Button;
