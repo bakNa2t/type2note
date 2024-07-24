@@ -23,9 +23,19 @@ const Circle = styled.span`
   height: 2rem;
   width: 2rem;
   display: inline-block;
-  border: 2px solid var(--color-blue);
+  border: 2px solid var(--color-blue-light-700);
   border-radius: 50%;
   z-index: 100;
+
+  &:hover {
+    background: linear-gradient(
+          var(--color-blue-zola-600),
+          var(--color-blue-zola-600)
+        )
+        padding-box,
+      var(--background-gradient) border-box;
+    border: 2px solid transparent;
+  }
 `;
 
 function CheckboxCustom() {

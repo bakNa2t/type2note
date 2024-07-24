@@ -4,6 +4,8 @@ const GlobalStyles = createGlobalStyle`
 
 :root {
     &, &.light-mode {
+        --background-gradient: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));;
+
         --color-blue: #3a7bfd;
         --color-blue-dark: #0070f3;
 
