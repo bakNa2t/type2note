@@ -12,10 +12,7 @@ function App() {
       <GlobalStyles />
       <Header />
       <AppLayout>
-        <h3>
-          Hi there!
-          <br /> It&apos;s time to store some notes
-        </h3>
+        <h3>Start to type to store some notes</h3>
         <InputField />
         <NoteField />
         <NoteFooterMenu />
