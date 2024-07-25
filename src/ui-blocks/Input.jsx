@@ -9,17 +9,15 @@ const StyledInput = styled.input`
   color: var(--color-blue-light-200);
 `;
 
-function Input({ value, ref, onChange }) {
+function Input({ value, onChange }) {
   Input.propTypes = {
     value: PropTypes.string,
-    ref: PropTypes.any,
     onChange: PropTypes.func,
   };
 
   return (
     <StyledInput
       type="text"
-      ref={ref}
       placeholder="Add new note..."
       name="create-note"
       value={value}

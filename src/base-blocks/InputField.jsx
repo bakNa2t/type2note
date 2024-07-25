@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { EnterOutlined } from "@ant-design/icons";
 import styled from "styled-components";
@@ -24,22 +24,9 @@ const InputWrapper = styled.div`
   width: 100%;
 `;
 
-// const IconWrapper = styled.div`
-//   position: absolute;
-//   top: 50%;
-//   right: 1rem;
-//   transform: translateY(-50%);
-//   font-size: 2rem;
-
-//   & > button {
-//     padding: 0.5rem;
-//   }
-// `;
-
 function InputField() {
   const [createNote, setCreateNote] = useState("");
   const dispatch = useDispatch();
-  const inputRef = useRef(null); //questinanble
 
   function handleInput(e) {
     e.preventDefault();
@@ -47,7 +34,6 @@ function InputField() {
     if (!createNote) return;
 
     dispatch(addNote(createNote));
-    // inputRef.current.blur();
     setCreateNote("");
   }
 
@@ -55,7 +41,6 @@ function InputField() {
     <StyledInputField onSubmit={handleInput}>
       <InputWrapper>
         <Input
-          ref={inputRef}
           value={createNote}
           onChange={(e) => setCreateNote(e.target.value)}
         />
