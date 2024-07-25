@@ -1,6 +1,6 @@
+import InputField from "./base-blocks/InputField";
 import Header from "./ui-blocks/Header";
 import AppLayout from "./ui-blocks/AppLayout";
-import InputField from "./ui-blocks/InputField";
 import NoteField from "./ui-blocks/NoteField";
 import NoteFooterMenu from "./ui-blocks/NoteFooterMenu";
 
