@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { EnterOutlined } from "@ant-design/icons";
 import styled from "styled-components";
@@ -46,6 +46,7 @@ const Input = styled.input`
 function InputField() {
   const [createNote, setCreateNote] = useState("");
   const dispatch = useDispatch();
+  const inputRef = useRef(null);
 
   function handleInput(e) {
     e.preventDefault();
@@ -54,6 +55,7 @@ function InputField() {
 
     dispatch(addNote(createNote));
     setCreateNote("");
+    inputRef.current.blur();
   }
 
   return (
@@ -61,6 +63,7 @@ function InputField() {
       <InputWrapper>
         <Input
           type="text"
+          ref={inputRef}
           placeholder="Add a new note..."
           name="create-note"
           value={createNote}

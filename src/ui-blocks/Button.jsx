@@ -1,7 +1,5 @@
 import styled, { css } from "styled-components";
 
-// import PropTypes from "prop-types";
-
 const sizes = {
   xs: css`
     font-size: 1.2rem;
@@ -20,7 +18,7 @@ const sizes = {
     padding: 1.1rem;
   `,
   xl: css`
-    font-size: 2rem;
+    font-size: 2.4rem;
     padding: 1.3rem;
   `,
 };
@@ -33,6 +31,7 @@ const Button = styled.button`
   ${(props) => sizes[props.size]}
 
   border: none;
+  border-radius: 0.4rem;
   background-color: transparent;
   color: var(--color-blue-light-200);
 

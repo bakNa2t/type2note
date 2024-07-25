@@ -36,7 +36,7 @@ function NoteField() {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,
           quis?
         </NoteText>
-        <Button>
+        <Button size="sm">
           <CloseOutlined />
         </Button>
       </NoteItem>
