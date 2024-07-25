@@ -5,6 +5,7 @@ import styled from "styled-components";
 
 import Button from "../ui-blocks/Button";
 import Input from "../ui-blocks/Input";
+import IconWrapper from "../ui-blocks/IconWrapper";
 
 import { addNote } from "./noteSlice";
 
@@ -23,25 +24,16 @@ const InputWrapper = styled.div`
   width: 100%;
 `;
 
-const IconWrapper = styled.div`
-  position: absolute;
-  top: 50%;
-  right: 1rem;
-  transform: translateY(-50%);
-  font-size: 2rem;
+// const IconWrapper = styled.div`
+//   position: absolute;
+//   top: 50%;
+//   right: 1rem;
+//   transform: translateY(-50%);
+//   font-size: 2rem;
 
-  & > button {
-    padding: 0.5rem;
-    border-radius: 0.4rem;
-  }
-`;
-
-// const Input = styled.input`
-//   width: 100%;
-//   padding: 1rem;
-//   border: none;
-//   background-color: transparent;
-//   color: var(--color-blue-light-200);
+//   & > button {
+//     padding: 0.5rem;
+//   }
 // `;
 
 function InputField() {
@@ -68,7 +60,7 @@ function InputField() {
           onChange={(e) => setCreateNote(e.target.value)}
         />
         <IconWrapper>
-          <Button>
+          <Button size="lg">
             <EnterOutlined />
           </Button>
         </IconWrapper>
