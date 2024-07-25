@@ -24,8 +24,30 @@ const noteSlice = createSlice({
         localStorage.setItem("notes", JSON.stringify(state.notes));
       },
     },
+    filterAll(state) {
+      state.filter = "all";
+    },
+    filterActive(state) {
+      state.filter = "active";
+    },
+    filterCompleted(state) {
+      state.filter = "completed";
+    },
   },
 });
+
+export function selectFilteredNotes(state) {
+  const { filter, notes } = state.note;
+
+  switch (filter) {
+    case "active":
+      return notes.filter((note) => !note.completedNote);
+    case "completed":
+      return notes.filter((note) => note.completedNote);
+    default:
+      return notes;
+  }
+}
 
 export const { addNote } = noteSlice.actions;
 
