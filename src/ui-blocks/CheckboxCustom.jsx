@@ -1,5 +1,6 @@
-import { useState } from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
+
 import CheckboxChecked from "./CheckboxChecked";
 
 const StyledCheckboxCustom = styled.button`
@@ -37,12 +38,15 @@ const CheckboxCircle = styled.span`
   }
 `;
 
-function CheckboxCustom() {
-  const [checked, setChecked] = useState(false);
+function CheckboxCustom({ onClick, completed }) {
+  CheckboxCustom.propTypes = {
+    onClick: PropTypes.func,
+    completed: PropTypes.bool,
+  };
 
   return (
-    <StyledCheckboxCustom onClick={() => setChecked(!checked)}>
-      {checked ? <CheckboxCircle /> : <CheckboxChecked />}
+    <StyledCheckboxCustom onClick={onClick}>
+      {completed ? <CheckboxChecked /> : <CheckboxCircle />}
     </StyledCheckboxCustom>
   );
 }

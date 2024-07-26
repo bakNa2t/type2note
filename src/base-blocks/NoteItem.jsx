@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 import Button from "../ui-blocks/Button";
 import CheckboxCustom from "../ui-blocks/CheckboxCustom";
 
-import { deleteNote } from "./noteSlice";
+import { crossNote, deleteNote } from "./noteSlice";
 
 const StyledNoteItem = styled.li`
   display: flex;
@@ -28,16 +28,20 @@ function NoteItem({ note }) {
     note: PropTypes.object,
   };
 
-  const { content, id } = note;
+  const { content, id, completed } = note;
   const dispatch = useDispatch();
 
   function handleDeleteNote() {
     dispatch(deleteNote(id));
   }
 
+  function handleCrossNote() {
+    dispatch(crossNote(id));
+  }
+
   return (
     <StyledNoteItem>
-      <CheckboxCustom />
+      <CheckboxCustom onClick={handleCrossNote} completed={completed} />
       <NoteText>{content}</NoteText>
       <Button size="sm" onClick={handleDeleteNote}>
         <CloseOutlined />

@@ -14,7 +14,7 @@ const noteSlice = createSlice({
         return {
           payload: {
             content: newNote,
-            completedNote: false,
+            completed: false,
             id: Math.random().toString(),
           },
         };
@@ -32,7 +32,7 @@ const noteSlice = createSlice({
       const currentNote = state.notes.find(
         (note) => note.id === action.payload
       );
-      currentNote.completedNote = !currentNote.completedNote;
+      currentNote.completed = !currentNote.completed;
       localStorage.setItem("notes", JSON.stringify(state.notes));
     },
     filterAll(state) {
@@ -52,9 +52,9 @@ export function selectFilteredNotes(state) {
 
   switch (filter) {
     case "active":
-      return notes.filter((note) => !note.completedNote);
+      return notes.filter((note) => !note.completed);
     case "completed":
-      return notes.filter((note) => note.completedNote);
+      return notes.filter((note) => note.completed);
     default:
       return notes;
   }
