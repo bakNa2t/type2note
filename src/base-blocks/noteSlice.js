@@ -24,6 +24,10 @@ const noteSlice = createSlice({
         localStorage.setItem("notes", JSON.stringify(state.notes));
       },
     },
+    deleteNote(state, action) {
+      state.notes = state.notes.filter((note) => note.id !== action.payload);
+      localStorage.setItem("notes", JSON.stringify(state.notes));
+    },
     filterAll(state) {
       state.filter = "all";
     },
@@ -49,6 +53,7 @@ export function selectFilteredNotes(state) {
   }
 }
 
-export const { addNote } = noteSlice.actions;
+export const { addNote, deleteNote, filterAll, filterActive, filterCompleted } =
+  noteSlice.actions;
 
 export default noteSlice.reducer;

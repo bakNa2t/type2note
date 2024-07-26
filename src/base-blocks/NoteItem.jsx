@@ -1,9 +1,12 @@
+import { useDispatch } from "react-redux";
 import { CloseOutlined } from "@ant-design/icons";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
 import Button from "../ui-blocks/Button";
 import CheckboxCustom from "../ui-blocks/CheckboxCustom";
+
+import { deleteNote } from "./noteSlice";
 
 const StyledNoteItem = styled.li`
   display: flex;
@@ -25,13 +28,18 @@ function NoteItem({ note }) {
     note: PropTypes.object,
   };
 
-  const { content } = note;
+  const { content, id } = note;
+  const dispatch = useDispatch();
+
+  function handleDeleteNote() {
+    dispatch(deleteNote(id));
+  }
 
   return (
     <StyledNoteItem>
       <CheckboxCustom />
       <NoteText>{content}</NoteText>
-      <Button size="sm">
+      <Button size="sm" onClick={handleDeleteNote}>
         <CloseOutlined />
       </Button>
     </StyledNoteItem>
