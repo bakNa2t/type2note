@@ -23,6 +23,13 @@ const NoteText = styled.p`
   font-size: clamp(1.4rem, 3vw, 1.2rem);
 `;
 
+const NoteTextCrossed = styled.p`
+  width: 100%;
+  font-size: clamp(1.4rem, 3vw, 1.2rem);
+  text-decoration: line-through;
+  color: var(--color-blue-light-700);
+`;
+
 function NoteItem({ note }) {
   NoteItem.propTypes = {
     note: PropTypes.object,
@@ -42,7 +49,11 @@ function NoteItem({ note }) {
   return (
     <StyledNoteItem>
       <CheckboxCustom onClick={handleCrossNote} completed={completed} />
-      <NoteText>{content}</NoteText>
+      {completed ? (
+        <NoteTextCrossed>{content}</NoteTextCrossed>
+      ) : (
+        <NoteText>{content}</NoteText>
+      )}
       <Button size="sm" onClick={handleDeleteNote}>
         <CloseOutlined />
       </Button>
