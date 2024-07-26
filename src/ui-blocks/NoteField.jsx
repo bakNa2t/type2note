@@ -23,7 +23,7 @@ function NoteField() {
       {filteredNotes.length === 0 ? (
         <NoteEmpty>Here will be your notes</NoteEmpty>
       ) : (
-        <NoteItem />
+        filteredNotes.map((note) => <NoteItem note={note} key={note.id} />)
       )}
     </StyledNoteField>
   );

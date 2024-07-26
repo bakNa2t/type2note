@@ -1,5 +1,6 @@
 import { CloseOutlined } from "@ant-design/icons";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 import Button from "../ui-blocks/Button";
 import CheckboxCustom from "../ui-blocks/CheckboxCustom";
@@ -19,14 +20,17 @@ const NoteText = styled.p`
   font-size: clamp(1.4rem, 3vw, 1.2rem);
 `;
 
-function NoteItem() {
+function NoteItem({ note }) {
+  NoteItem.propTypes = {
+    note: PropTypes.object,
+  };
+
+  const { content } = note;
+
   return (
     <StyledNoteItem>
       <CheckboxCustom />
-      <NoteText>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,
-        quis?
-      </NoteText>
+      <NoteText>{content}</NoteText>
       <Button size="sm">
         <CloseOutlined />
       </Button>
