@@ -16,7 +16,6 @@ const StyledNoteField = styled.ul`
 
 function NoteField() {
   const filteredNotes = useSelector(selectFilteredNotes);
-  console.log(filteredNotes);
 
   return (
     <StyledNoteField>
