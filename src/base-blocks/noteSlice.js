@@ -28,6 +28,13 @@ const noteSlice = createSlice({
       state.notes = state.notes.filter((note) => note.id !== action.payload);
       localStorage.setItem("notes", JSON.stringify(state.notes));
     },
+    crossNote(state, action) {
+      const currentNote = state.notes.find(
+        (note) => note.id === action.payload
+      );
+      currentNote.completedNote = !currentNote.completedNote;
+      localStorage.setItem("notes", JSON.stringify(state.notes));
+    },
     filterAll(state) {
       state.filter = "all";
     },
@@ -53,7 +60,13 @@ export function selectFilteredNotes(state) {
   }
 }
 
-export const { addNote, deleteNote, filterAll, filterActive, filterCompleted } =
-  noteSlice.actions;
+export const {
+  addNote,
+  deleteNote,
+  crossNote,
+  filterAll,
+  filterActive,
+  filterCompleted,
+} = noteSlice.actions;
 
 export default noteSlice.reducer;
