@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 import NoteFilter from "./NoteFilter";
 import Button from "./Button";
+import { useSelector } from "react-redux";
 
 const StyledNoteFooterMenu = styled.div`
   display: flex;
@@ -24,7 +25,9 @@ const NoteAmount = styled.p`
 `;
 
 function NoteFooterMenu() {
-  const amountNote = 0;
+  const amountNote = useSelector(
+    (state) => state.note.notes.filter((note) => note.completed !== true).length
+  );
 
   return (
     <StyledNoteFooterMenu>
