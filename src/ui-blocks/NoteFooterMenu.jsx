@@ -1,8 +1,11 @@
+import { useDispatch, useSelector } from "react-redux";
+import { ClearOutlined, DeleteOutlined } from "@ant-design/icons";
 import styled from "styled-components";
 
 import NoteFilter from "./NoteFilter";
 import Button from "./Button";
-import { useSelector } from "react-redux";
+
+import { clearAllNotes } from "../base-blocks/noteSlice";
 
 const StyledNoteFooterMenu = styled.div`
   display: flex;
@@ -28,6 +31,11 @@ function NoteFooterMenu() {
   const amountNote = useSelector(
     (state) => state.note.notes.filter((note) => note.completed !== true).length
   );
+  const dispatch = useDispatch();
+
+  function handleClearAllNotes() {
+    dispatch(clearAllNotes());
+  }
 
   return (
     <StyledNoteFooterMenu>
@@ -35,7 +43,12 @@ function NoteFooterMenu() {
         {amountNote} <span>notes left</span>
       </NoteAmount>
       <NoteFilter />
-      <Button size="xs">Clear completed</Button>
+      <Button size="md">
+        <ClearOutlined />
+      </Button>
+      <Button size="md" onClick={handleClearAllNotes}>
+        <DeleteOutlined />
+      </Button>
     </StyledNoteFooterMenu>
   );
 }

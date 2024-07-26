@@ -35,6 +35,10 @@ const noteSlice = createSlice({
       currentNote.completed = !currentNote.completed;
       localStorage.setItem("notes", JSON.stringify(state.notes));
     },
+    clearAllNotes(state) {
+      state.notes = [];
+      localStorage.setItem("notes", JSON.stringify(state.notes));
+    },
     filterAll(state) {
       state.filter = "all";
     },
@@ -64,6 +68,7 @@ export const {
   addNote,
   deleteNote,
   crossNote,
+  clearAllNotes,
   filterAll,
   filterActive,
   filterCompleted,
