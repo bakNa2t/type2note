@@ -73,6 +73,7 @@ export const {
   deleteNote,
   crossNote,
   clearAllNotes,
+  clearCompletedNotes,
   filterAll,
   filterActive,
   filterCompleted,

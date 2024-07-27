@@ -6,7 +6,7 @@ import NoteFilter from "./NoteFilter";
 import Button from "./Button";
 import NoteClearBtns from "./NoteClearBtns";
 
-import { clearAllNotes } from "../base-blocks/noteSlice";
+import { clearAllNotes, clearCompletedNotes } from "../base-blocks/noteSlice";
 
 const StyledNoteFooterMenu = styled.div`
   display: flex;
@@ -40,6 +40,12 @@ function NoteFooterMenu() {
     dispatch(clearAllNotes());
   }
 
+  function handleClearCompletedNotes() {
+    if (amountNote === 0) return;
+
+    dispatch(clearCompletedNotes());
+  }
+
   return (
     <StyledNoteFooterMenu>
       <NoteAmount>
@@ -47,7 +53,7 @@ function NoteFooterMenu() {
       </NoteAmount>
       <NoteFilter />
       <NoteClearBtns>
-        <Button size="md">
+        <Button size="md" onClick={handleClearCompletedNotes}>
           <ClearOutlined />
         </Button>
 
