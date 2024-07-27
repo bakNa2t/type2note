@@ -18,6 +18,8 @@ const StyledNoteFilter = styled.div`
 
 const FilterActive = styled.p`
   color: var(--color-blue);
+  text-shadow: 0 0 1rem var(--color-blue-light-200);
+  cursor: not-allowed;
 `;
 
 function NoteFilter() {
@@ -41,6 +43,7 @@ function NoteFilter() {
       <Button size="xs" onClick={handleFilterAll}>
         {toFiltered === "all" ? <FilterActive>All</FilterActive> : "All"}
       </Button>
+
       <Button size="xs" onClick={handleFilterActive}>
         {toFiltered === "active" ? (
           <FilterActive>Active</FilterActive>
@@ -48,6 +51,7 @@ function NoteFilter() {
           "Active"
         )}
       </Button>
+
       <Button size="xs" onClick={handleFilterCompleted}>
         {toFiltered === "completed" ? (
           <FilterActive>Completed</FilterActive>
