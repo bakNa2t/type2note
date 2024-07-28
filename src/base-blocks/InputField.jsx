@@ -38,6 +38,8 @@ function InputField() {
 
     if (!createNote) return;
 
+    if (createNote.trim() === "") return;
+
     dispatch(addNote(createNote));
     setCreateNote("");
   }
