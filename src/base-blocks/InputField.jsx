@@ -17,6 +17,11 @@ const StyledInputField = styled.form`
   background-color: var(--color-blue-zola-600);
   margin: 2rem 0;
   overflow: hidden;
+
+  &:focus-within {
+    outline: 2px solid var(--color-blue-light-700);
+    outline-offset: 2px;
+  }
 `;
 
 const InputWrapper = styled.div`

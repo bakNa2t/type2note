@@ -5,6 +5,7 @@ const StyledInput = styled.input`
   width: 100%;
   padding: 1rem;
   border: none;
+  outline: none;
   background-color: transparent;
   color: var(--color-blue-light-200);
 `;
