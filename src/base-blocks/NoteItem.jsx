@@ -39,7 +39,8 @@ function NoteItem({ note }) {
   const dispatch = useDispatch();
 
   function handleDeleteNote() {
-    dispatch(deleteNote(id));
+    if (confirm("Are you sure you want to delete this note?"))
+      dispatch(deleteNote(id));
   }
 
   function handleCrossNote() {
