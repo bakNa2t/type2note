@@ -22,13 +22,19 @@ const StyledNoteFooterMenu = styled.div`
 `;
 
 const NoteAmount = styled.p`
-  font-weight: 700;
-  padding: 0.5rem;
+  font-weight: 400;
+  font-size: 1.2rem;
+  font-style: italic;
 
   & span {
-    font-weight: 400;
-    font-size: 1.2rem;
-    font-style: italic;
+    margin-right: 0.5rem;
+    font-size: 2rem;
+    font-style: normal;
+    padding: 0.3rem 0.4rem;
+    border-radius: 0.5rem;
+    font-weight: 700;
+    color: var(--color-blue-zola-700);
+    background-color: var(--color-blue-light-700);
   }
 `;
 
@@ -56,7 +62,7 @@ function NoteFooterMenu() {
   return (
     <StyledNoteFooterMenu>
       <NoteAmount>
-        {amountNote} <span>notes left</span>
+        <span>{amountNote}</span>notes left
       </NoteAmount>
       <NoteFilter />
       <NoteClearBtns>
