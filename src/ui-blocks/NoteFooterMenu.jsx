@@ -45,6 +45,9 @@ function NoteFooterMenu() {
   const notes = useSelector(selectFilteredNotes);
   const dispatch = useDispatch();
 
+  const completed = notes.filter((note) => note.completed === true).length;
+  console.log(completed);
+
   function handleClearAllNotes() {
     if (notes.length === 0) return;
 
@@ -70,7 +73,7 @@ function NoteFooterMenu() {
           size="md"
           onClick={handleClearCompletedNotes}
           cleardesc={{ content: "Clear completed" }}
-          disabled={notes.length === 0}
+          disabled={notes.length === 0 || completed === 0}
         >
           <ClearOutlined />
         </Button>
