@@ -63,11 +63,19 @@ function NoteFooterMenu() {
       </NoteAmount>
       <NoteFilter />
       <NoteClearBtns>
-        <Button size="md" onClick={handleClearCompletedNotes}>
+        <Button
+          size="md"
+          onClick={handleClearCompletedNotes}
+          disabled={notes.length === 0}
+        >
           <ClearOutlined />
         </Button>
 
-        <Button size="md" onClick={handleClearAllNotes}>
+        <Button
+          size="md"
+          onClick={handleClearAllNotes}
+          disabled={notes.length === 0}
+        >
           <DeleteOutlined />
         </Button>
       </NoteClearBtns>
