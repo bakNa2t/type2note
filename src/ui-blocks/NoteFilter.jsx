@@ -42,6 +42,7 @@ function NoteFilter() {
       <Button
         size="xs"
         onClick={handleFilterAll}
+        nothovered={String(toFiltered === "all")}
         disabled={toFiltered === "all"}
       >
         {toFiltered === "all" ? <FilterActive>All</FilterActive> : "All"}
@@ -50,6 +51,7 @@ function NoteFilter() {
       <Button
         size="xs"
         onClick={handleFilterActive}
+        nothovered={String(toFiltered === "active")}
         disabled={toFiltered === "active"}
       >
         {toFiltered === "active" ? (
@@ -62,6 +64,7 @@ function NoteFilter() {
       <Button
         size="xs"
         onClick={handleFilterCompleted}
+        nothovered={String(toFiltered === "completed")}
         disabled={toFiltered === "completed"}
       >
         {toFiltered === "completed" ? (

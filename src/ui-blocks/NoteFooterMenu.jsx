@@ -39,9 +39,6 @@ function NoteFooterMenu() {
   const notes = useSelector(selectFilteredNotes);
   const dispatch = useDispatch();
 
-  console.log(amountNote);
-  console.log(notes.length);
-
   function handleClearAllNotes() {
     if (notes.length === 0) return;
 

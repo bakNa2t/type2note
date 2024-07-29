@@ -35,10 +35,20 @@ const Button = styled.button`
   background-color: transparent;
   color: var(--color-blue-light-200);
 
-  &:hover {
-    color: var(--color-blue-light-700);
-    background-color: var(--color-blue-light-200);
-  }
+  ${(props) =>
+    props.nothovered
+      ? css`
+          &:hover:not(:disabled) {
+            color: var(--color-blue-light-700);
+            background-color: var(--color-blue-light-200);
+          }
+        `
+      : css`
+          &:hover:not(:disabled) {
+            color: var(--color-blue-light-700);
+            background-color: var(--color-blue-light-200);
+          }
+        `}
 `;
 
 export default Button;
