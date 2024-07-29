@@ -16,7 +16,7 @@ const StyledNoteFooterMenu = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 1.5rem;
+  padding: 1rem 1.5rem;
   background-color: var(--color-blue-zola-600);
   border-radius: 0 0 1rem 1rem;
 `;
@@ -69,6 +69,7 @@ function NoteFooterMenu() {
         <Button
           size="md"
           onClick={handleClearCompletedNotes}
+          cleardesc={{ content: "Clear completed" }}
           disabled={notes.length === 0}
         >
           <ClearOutlined />
@@ -77,6 +78,7 @@ function NoteFooterMenu() {
         <Button
           size="md"
           onClick={handleClearAllNotes}
+          cleardesc={{ content: "Clear all" }}
           disabled={notes.length === 0}
         >
           <DeleteOutlined />

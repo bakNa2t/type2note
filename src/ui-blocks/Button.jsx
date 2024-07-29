@@ -24,16 +24,17 @@ const sizes = {
 };
 
 const Button = styled.button`
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  ${(props) => sizes[props.size]}
 
   border: none;
   border-radius: 0.4rem;
   background-color: transparent;
   color: var(--color-blue-light-200);
+
+  ${(props) => sizes[props.size]}
 
   ${(props) =>
     props.nothovered
@@ -49,6 +50,25 @@ const Button = styled.button`
             background-color: var(--color-blue-light-200);
           }
         `}
+
+    &:hover {
+    ${(props) =>
+      props.cleardesc &&
+      css`
+        &::before {
+          content: "${props.cleardesc.content}";
+          position: absolute;
+          width: max-content;
+          font-size: 1rem;
+          left: 50%;
+          transform: translateX(-50%);
+          display: flex;
+          top: -1.6rem;
+          color: var(--color-blue-light-200);
+          text-shadow: 0 0 0.5rem var(--color-blue-light-200);
+        }
+      `}
+  }
 `;
 
 export default Button;
