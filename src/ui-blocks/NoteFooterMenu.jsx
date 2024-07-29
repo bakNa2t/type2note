@@ -34,16 +34,20 @@ function NoteFooterMenu() {
   );
   const dispatch = useDispatch();
 
+  console.log(amountNote);
+
   function handleClearAllNotes() {
     if (amountNote === 0) return;
 
-    dispatch(clearAllNotes());
+    if (confirm("Are you sure you want to delete all notes?"))
+      dispatch(clearAllNotes());
   }
 
   function handleClearCompletedNotes() {
     if (amountNote === 0) return;
 
-    dispatch(clearCompletedNotes());
+    if (confirm("Are you sure you want to delete all completed notes?"))
+      dispatch(clearCompletedNotes());
   }
 
   return (
