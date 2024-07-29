@@ -16,11 +16,18 @@ const StyledNoteField = styled.ul`
 
 function NoteField() {
   const filteredNotes = useSelector(selectFilteredNotes);
+  const toFiltered = useSelector((state) => state.note.filter);
 
   return (
     <StyledNoteField>
       {filteredNotes.length === 0 ? (
-        <NoteEmpty>Now note list is empty</NoteEmpty>
+        toFiltered === "active" ? (
+          <NoteEmpty>Active notes list is empty</NoteEmpty>
+        ) : toFiltered === "completed" ? (
+          <NoteEmpty>Completed notes list is empty</NoteEmpty>
+        ) : (
+          <NoteEmpty>Now note list is empty</NoteEmpty>
+        )
       ) : (
         filteredNotes.map((note) => <NoteItem note={note} key={note.id} />)
       )}
