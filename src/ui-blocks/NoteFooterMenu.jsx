@@ -6,7 +6,11 @@ import NoteFilter from "./NoteFilter";
 import Button from "./Button";
 import NoteClearBtns from "./NoteClearBtns";
 
-import { clearAllNotes, clearCompletedNotes } from "../base-blocks/noteSlice";
+import {
+  clearAllNotes,
+  clearCompletedNotes,
+  selectFilteredNotes,
+} from "../base-blocks/noteSlice";
 
 const StyledNoteFooterMenu = styled.div`
   display: flex;
@@ -32,19 +36,21 @@ function NoteFooterMenu() {
   const amountNote = useSelector(
     (state) => state.note.notes.filter((note) => note.completed !== true).length
   );
+  const notes = useSelector(selectFilteredNotes);
   const dispatch = useDispatch();
 
   console.log(amountNote);
+  console.log(notes.length);
 
   function handleClearAllNotes() {
-    if (amountNote === 0) return;
+    if (notes.length === 0) return;
 
     if (confirm("Are you sure you want to delete all notes?"))
       dispatch(clearAllNotes());
   }
 
   function handleClearCompletedNotes() {
-    if (amountNote === 0) return;
+    if (notes.length === 0) return;
 
     if (confirm("Are you sure you want to delete all completed notes?"))
       dispatch(clearCompletedNotes());
