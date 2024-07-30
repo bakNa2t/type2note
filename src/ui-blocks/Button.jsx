@@ -32,7 +32,7 @@ const Button = styled.button`
   border: none;
   border-radius: 0.4rem;
   background-color: transparent;
-  color: var(--color-blue-light-200);
+  color: var(--color-spring-green-200);
 
   ${(props) => sizes[props.size]}
 
@@ -40,14 +40,14 @@ const Button = styled.button`
     props.nothovered
       ? css`
           &:hover:not(:disabled) {
-            color: var(--color-blue-light-700);
-            background-color: var(--color-blue-light-200);
+            color: var(--color-spring-green-900);
+            background-color: var(--color-spring-green-300);
           }
         `
       : css`
           &:hover:not(:disabled) {
-            color: var(--color-blue-light-700);
-            background-color: var(--color-blue-light-200);
+            color: var(--color-spring-green-900);
+            background-color: var(--color-spring-green-300);
           }
         `}
 
@@ -64,8 +64,8 @@ const Button = styled.button`
           transform: translateX(-50%);
           display: flex;
           top: -1.6rem;
-          color: var(--color-blue-light-200);
-          text-shadow: 0 0 0.5rem var(--color-blue-light-200);
+          color: var(--color-spring-green-300);
+          text-shadow: 0 0 0.5rem var(--color-spring-green-400);
         }
       `}
   }

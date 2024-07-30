@@ -23,7 +23,8 @@ const Logo = styled.div`
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 3px;
-  color: var(--color-blue-light-200);
+  color: var(--color-spring-green-500);
+  text-shadow: 0 0 1rem var(--color-spring-green-400);
 `;
 
 function Header() {
