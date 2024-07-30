@@ -23,6 +23,12 @@ const sizes = {
   `,
 };
 
+const colors = {
+  theme: css`
+    color: var(--color-spring-green-800);
+  `,
+};
+
 const Button = styled.button`
   position: relative;
   display: flex;
@@ -36,18 +42,22 @@ const Button = styled.button`
 
   ${(props) => sizes[props.size]}
 
+  ${(props) => colors[props.color]}
+
   ${(props) =>
     props.nothovered
       ? css`
           &:hover:not(:disabled) {
             color: var(--color-spring-green-900);
-            background-color: var(--color-spring-green-300);
+            text-shadow: 0 0 0.4rem var(--color-spring-green-700);
+            background-color: var(--color-spring-green-200);
           }
         `
       : css`
           &:hover:not(:disabled) {
             color: var(--color-spring-green-900);
-            background-color: var(--color-spring-green-300);
+            text-shadow: 0 0 0.4rem var(--color-spring-green-700);
+            background-color: var(--color-spring-green-200);
           }
         `}
 

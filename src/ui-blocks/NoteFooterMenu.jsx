@@ -31,7 +31,7 @@ const NoteAmount = styled.p`
     margin-right: 0.5rem;
     font-size: 2rem;
     font-style: normal;
-    padding: 0.3rem 0.4rem;
+    padding: 0.1rem 0.5rem;
     border-radius: 0.5rem;
     font-weight: 700;
     color: var(--color-spring-green-800);

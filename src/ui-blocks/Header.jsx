@@ -34,7 +34,7 @@ function Header() {
   return (
     <StyledHeader>
       <Logo>Type 2 Note</Logo>
-      <Button size="xl" onClick={toggleDarkMode}>
+      <Button size="xl" color="theme" onClick={toggleDarkMode}>
         {isDarkMode ? <SunOutlined /> : <MoonOutlined />}
       </Button>
     </StyledHeader>

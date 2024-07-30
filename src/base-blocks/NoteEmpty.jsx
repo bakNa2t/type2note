@@ -5,7 +5,8 @@ const NoteEmpty = styled.li`
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  border-bottom: 1px solid var(--color-blue-light-300);
+  color: var(--color-spring-green-200);
+  border-bottom: 1px solid var(--color-spring-green-100);
 `;
 
 export default NoteEmpty;
