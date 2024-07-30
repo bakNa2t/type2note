@@ -46,7 +46,6 @@ function NoteFooterMenu() {
   const dispatch = useDispatch();
 
   const completed = notes.filter((note) => note.completed === true).length;
-  console.log(completed);
 
   function handleClearAllNotes() {
     if (notes.length === 0) return;
