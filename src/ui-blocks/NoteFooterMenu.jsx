@@ -25,6 +25,7 @@ const NoteAmount = styled.p`
   font-weight: 400;
   font-size: 1.2rem;
   font-style: italic;
+  color: var(--color-spring-green-200);
 
   & span {
     margin-right: 0.5rem;
@@ -33,8 +34,8 @@ const NoteAmount = styled.p`
     padding: 0.3rem 0.4rem;
     border-radius: 0.5rem;
     font-weight: 700;
-    color: var(--color-blue-zola-700);
-    background-color: var(--color-blue-light-700);
+    color: var(--color-spring-green-800);
+    background-color: var(--color-spring-green-400);
   }
 `;
 

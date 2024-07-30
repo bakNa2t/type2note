@@ -17,8 +17,8 @@ const StyledNoteFilter = styled.div`
 `;
 
 const FilterActive = styled.p`
-  color: var(--color-blue);
-  text-shadow: 0 0 1rem var(--color-blue-light-200);
+  color: var(--color-spring-green-500);
+  text-shadow: 0 0 0.6rem var(--color-spring-green-300);
 `;
 
 function NoteFilter() {
