@@ -24,7 +24,8 @@ const Logo = styled.div`
   font-weight: 700;
   letter-spacing: 3px;
   color: var(--color-spring-green-500);
-  text-shadow: 0 0 1rem var(--color-spring-green-400);
+  text-shadow: 0 0 1rem var(--color-spring-green-600);
+  -webkit-text-stroke: 0.1rem var(--color-spring-green-600);
 `;
 
 function Header() {

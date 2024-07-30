@@ -8,11 +8,12 @@ const CheckboxChecked = styled.span`
   width: 2rem;
   border: 2px solid transparent;
   background: var(--background-gradient) border-box;
+  box-shadow: 0 0 0.4rem var(--color-spring-green-300);
 
   &::after {
     content: "✓";
     position: absolute;
-    color: var(--color-blue-light-200);
+    color: var(--color-spring-green-900);
     display: flex;
     top: -2px;
     left: 50%;
