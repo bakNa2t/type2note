@@ -5,10 +5,11 @@ import NoteField from "./ui-blocks/NoteField";
 import NoteFooterMenu from "./ui-blocks/NoteFooterMenu";
 
 import GlobalStyles from "./styles/GlobalStyles";
+import { DarkModeProvider } from "./context/DarkModeContext";
 
 function App() {
   return (
-    <>
+    <DarkModeProvider>
       <GlobalStyles />
       <Header />
       <AppLayout>
@@ -17,7 +18,7 @@ function App() {
         <NoteField />
         <NoteFooterMenu />
       </AppLayout>
-    </>
+    </DarkModeProvider>
   );
 }
 

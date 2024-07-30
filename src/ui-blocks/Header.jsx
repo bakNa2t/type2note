@@ -1,7 +1,9 @@
-import { SunOutlined } from "@ant-design/icons";
+import { MoonOutlined, SunOutlined } from "@ant-design/icons";
 import styled from "styled-components";
 
 import Button from "./Button";
+
+import { useDarkMode } from "../context/DarkModeContext";
 
 const StyledHeader = styled.header`
   display: flex;
@@ -25,11 +27,13 @@ const Logo = styled.div`
 `;
 
 function Header() {
+  const { isDarkMode, toggleDarkMode } = useDarkMode();
+
   return (
     <StyledHeader>
       <Logo>Type 2 Note</Logo>
-      <Button size="xl">
-        <SunOutlined />
+      <Button size="xl" onClick={toggleDarkMode}>
+        {isDarkMode ? <MoonOutlined /> : <SunOutlined />}
       </Button>
     </StyledHeader>
   );
