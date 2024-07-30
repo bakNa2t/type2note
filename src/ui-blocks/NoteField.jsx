@@ -9,7 +9,7 @@ import { selectFilteredNotes } from "../base-blocks/noteSlice";
 const StyledNoteField = styled.ul`
   display: flex;
   flex-direction: column;
-  background-color: var(--color-blue-zola-600);
+  background-color: var(--color-ebony-800);
   border-radius: 1rem 1rem 0 0;
   padding: 1rem;
 `;

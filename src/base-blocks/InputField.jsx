@@ -14,12 +14,12 @@ const StyledInputField = styled.form`
   align-items: center;
   width: 100%;
   border-radius: 1rem;
-  background-color: var(--color-blue-zola-600);
+  background-color: var(--color-ebony-800);
   margin: 2rem 0;
   overflow: hidden;
 
   &:focus-within {
-    outline: 2px solid var(--color-blue-light-700);
+    outline: 0.4rem solid var(--color-ebony-400);
     outline-offset: 2px;
   }
 `;

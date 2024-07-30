@@ -22,9 +22,9 @@ const GlobalStyles = createGlobalStyle`
         --color-ebony-400:#7f8879;
         --color-ebony-500:#646d5f;
         --color-ebony-600:#555d50;
-        --color-ebony-700:#42473e
-        --color-ebony-800:#363b34
-        --color-ebony-900:#2f332e
+        --color-ebony-700:#42473e;
+        --color-ebony-800:#363b34;
+        --color-ebony-900:#2f332e;
 
         //spring green
         --color-spring-green-100:#d5ffef;
@@ -45,9 +45,9 @@ const GlobalStyles = createGlobalStyle`
         --color-blue-light-300: #c2c2c2;
         --color-blue-light-700: #e4e5f1;
 
-        --color-ebony-100:#2f332e
-        --color-ebony-200:#363b34
-        --color-ebony-300:#42473e
+        --color-ebony-100:#2f332e;
+        --color-ebony-200:#363b34;
+        --color-ebony-300:#42473e;
         --color-ebony-400:#555d50;
         --color-ebony-500:#646d5f;
         --color-ebony-600:#7f8879;
@@ -136,8 +136,8 @@ body {
     font-size: 1.6rem;
 
     font-family: 'Fira Code', monospace;
-    background-color: var(--color-blue-zola-700);
-    color: var(--color-blue-light-200);
+    background-color: var(--color-ebony-100);
+    color: var( --color-spring-green-800);
 }
 
 input,

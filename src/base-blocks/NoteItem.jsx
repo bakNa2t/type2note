@@ -15,19 +15,19 @@ const StyledNoteItem = styled.li`
   gap: 1rem;
   padding: 1rem;
   min-height: 3rem;
-  border-bottom: 1px solid var(--color-blue-light-300);
+  border-bottom: 1px solid var(--color-spring-green-100);
 `;
 
 const NoteText = styled.p`
   width: 100%;
   font-size: clamp(1.4rem, 3vw, 1.2rem);
+  color: var(--color-spring-green-200);
 `;
 
 const NoteTextCrossed = styled.p`
   width: 100%;
   font-size: clamp(1.4rem, 3vw, 1.2rem);
   text-decoration: line-through;
-  color: var(--color-blue-light-700);
 `;
 
 function NoteItem({ note }) {

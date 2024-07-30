@@ -17,7 +17,7 @@ const StyledNoteFooterMenu = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 1rem 1.5rem;
-  background-color: var(--color-blue-zola-600);
+  background-color: var(--color-ebony-800);
   border-radius: 0 0 1rem 1rem;
 `;
 
