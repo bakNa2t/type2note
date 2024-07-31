@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { ClearOutlined, DeleteOutlined } from "@ant-design/icons";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 import NoteFilter from "./NoteFilter";
 import Button from "./Button";
@@ -39,7 +40,11 @@ const NoteAmount = styled.p`
   }
 `;
 
-function NoteFooterMenu() {
+function NoteFooterMenu({ isMobileSize }) {
+  NoteFooterMenu.propTypes = {
+    isMobileSize: PropTypes.bool,
+  };
+
   const amountNote = useSelector(
     (state) => state.note.notes.filter((note) => note.completed !== true).length
   );
@@ -67,7 +72,7 @@ function NoteFooterMenu() {
       <NoteAmount>
         <span>{amountNote}</span>notes left
       </NoteAmount>
-      <NoteFilter />
+      {isMobileSize && <NoteFilter />}
       <NoteClearBtns>
         <Button
           size="md"

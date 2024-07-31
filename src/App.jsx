@@ -23,10 +23,10 @@ function App() {
         <h3>Start to type to store some notes</h3>
         <InputField />
         <NoteField />
-        <NoteFooterMenu />
+        <NoteFooterMenu isMobileSize={isMobileSize} />
         {!isMobileSize && (
           <NoteFilterWrapper>
-            <NoteFilter isMobileSize={!isMobileSize} />
+            <NoteFilter />
           </NoteFilterWrapper>
         )}
       </AppLayout>
