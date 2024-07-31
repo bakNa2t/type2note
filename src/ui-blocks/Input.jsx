@@ -7,7 +7,12 @@ const StyledInput = styled.input`
   border: none;
   outline: none;
   background-color: transparent;
-  color: var(--color-blue-light-200);
+  color: var(--color-spring-green-200);
+
+  &::placeholder {
+    font-style: italic;
+    color: var(--color-ebony-400);
+  }
 `;
 
 function Input({ value, onChange }) {
