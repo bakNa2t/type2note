@@ -1,10 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import toast from "react-hot-toast";
 
-const initialState = {
-  notes: JSON.parse(localStorage.getItem("notes")) || [],
-  filter: "all",
-};
+import initialState from "./initial-state/initialState";
 
 const noteSlice = createSlice({
   name: "note",

@@ -36,7 +36,7 @@ function App() {
         position="top-center"
         gutter={12}
         containerStyle={{
-          margin: "8px",
+          margin: "6px",
         }}
         toastOptions={{
           success: {
@@ -46,9 +46,9 @@ function App() {
             duration: 2000,
           },
           style: {
-            fontSize: "1.4rem",
+            fontSize: "1.2rem",
             maxWidth: "300px",
-            padding: "1rem 2rem",
+            padding: "0.6rem 1.2rem",
             backgroundColor: "var(--color-spring-green-200)",
             color: "var(--color-spring-green-800)",
           },
