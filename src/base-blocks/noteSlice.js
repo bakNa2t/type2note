@@ -24,20 +24,18 @@ const noteSlice = createSlice({
       },
     },
     editNote(state, action) {
-      const currentNote = state.notes.find(
+      const noteIndex = state.notes.findIndex(
         (note) => note.id === action.payload.id
       );
-      currentNote.content = action.payload.content;
 
-      // reducer(state, action) {
-      //   state.notes = state.notes.map((note) =>
-      //     note.id === action.payload.id
-      //       ? { ...note, content: action.payload.content }
-      //       : note
-      //   );
-      //   localStorage.setItem("notes", JSON.stringify(state.notes));
-      //   toast.success("Note edited");
-      // }
+      if (noteIndex !== -1) {
+        state.notes[noteIndex].content = action.payload.content;
+
+        localStorage.setItem("notes", JSON.stringify(state.notes));
+        toast.success("Note edited");
+      }
+
+      state.editingNotes = {};
     },
     deleteNote(state, action) {
       state.notes = state.notes.filter((note) => note.id !== action.payload);
