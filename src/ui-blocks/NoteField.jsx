@@ -26,7 +26,7 @@ function NoteField() {
         ) : toFiltered === "completed" ? (
           <NoteEmpty>Completed notes list is empty</NoteEmpty>
         ) : (
-          <NoteEmpty>Now note list is empty</NoteEmpty>
+          <NoteEmpty>Note list is empty now</NoteEmpty>
         )
       ) : (
         filteredNotes.map((note) => <NoteItem note={note} key={note.id} />)

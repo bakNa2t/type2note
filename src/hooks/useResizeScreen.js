@@ -5,7 +5,7 @@ export function useResizeScreen() {
 
   //compare screen size with mobile size (464) and set state
   function isLessThanMobile() {
-    setIsMobileSize(window.innerWidth > 464);
+    setIsMobileSize(window.innerWidth > 500);
     // return setIsMobileSize(screen.width > 464);
   }
 

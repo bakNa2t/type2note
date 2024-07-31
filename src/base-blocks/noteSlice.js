@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import toast from "react-hot-toast";
 
 const initialState = {
   notes: JSON.parse(localStorage.getItem("notes")) || [],
@@ -22,6 +23,7 @@ const noteSlice = createSlice({
       reducer(state, action) {
         state.notes = [action.payload, ...state.notes];
         localStorage.setItem("notes", JSON.stringify(state.notes));
+        toast.success("Note added");
       },
     },
     editNote(state, action) {
@@ -29,11 +31,21 @@ const noteSlice = createSlice({
         (note) => note.id === action.payload.id
       );
       currentNote.content = action.payload.content;
-      localStorage.setItem("notes", JSON.stringify(state.notes));
+
+      // reducer(state, action) {
+      //   state.notes = state.notes.map((note) =>
+      //     note.id === action.payload.id
+      //       ? { ...note, content: action.payload.content }
+      //       : note
+      //   );
+      //   localStorage.setItem("notes", JSON.stringify(state.notes));
+      //   toast.success("Note edited");
+      // }
     },
     deleteNote(state, action) {
       state.notes = state.notes.filter((note) => note.id !== action.payload);
       localStorage.setItem("notes", JSON.stringify(state.notes));
+      toast.success("Note deleted");
     },
     crossNote(state, action) {
       const currentNote = state.notes.find(
@@ -45,10 +57,12 @@ const noteSlice = createSlice({
     clearAllNotes(state) {
       state.notes = [];
       localStorage.setItem("notes", JSON.stringify(state.notes));
+      toast.success("All notes deleted");
     },
     clearCompletedNotes(state) {
       state.notes = state.notes.filter((note) => !note.completed);
       localStorage.setItem("notes", JSON.stringify(state.notes));
+      toast.success("All completed notes deleted");
     },
     filterAll(state) {
       state.filter = "all";

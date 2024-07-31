@@ -1,3 +1,5 @@
+import { Toaster } from "react-hot-toast";
+
 import InputField from "./base-blocks/InputField";
 import Header from "./ui-blocks/Header";
 import AppLayout from "./ui-blocks/AppLayout";
@@ -30,6 +32,28 @@ function App() {
           </NoteFilterWrapper>
         )}
       </AppLayout>
+      <Toaster
+        position="top-center"
+        gutter={12}
+        containerStyle={{
+          margin: "8px",
+        }}
+        toastOptions={{
+          success: {
+            duration: 2000,
+          },
+          error: {
+            duration: 2000,
+          },
+          style: {
+            fontSize: "1.4rem",
+            maxWidth: "300px",
+            padding: "1rem 2rem",
+            backgroundColor: "var(--color-spring-green-200)",
+            color: "var(--color-spring-green-800)",
+          },
+        }}
+      />
     </DarkModeProvider>
   );
 }
