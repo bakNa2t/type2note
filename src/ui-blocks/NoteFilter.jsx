@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 import Button from "./Button";
 
@@ -11,7 +12,7 @@ import {
 
 const StyledNoteFilter = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: 1rem;
 `;
@@ -22,6 +23,10 @@ const FilterActive = styled.p`
 `;
 
 function NoteFilter() {
+  NoteFilter.propTypes = {
+    isMobileSize: PropTypes.bool,
+  };
+
   const dispatch = useDispatch();
   const toFiltered = useSelector((state) => state.note.filter);
 

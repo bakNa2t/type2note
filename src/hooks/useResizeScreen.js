@@ -4,18 +4,23 @@ export function useResizeScreen() {
   const [isMobileSize, setIsMobileSize] = useState(false);
 
   //compare screen size with mobile size (464) and set state
-  const lessThanMobile =
-    setIsMobileSize(window.matchMedia("(max-width: 464px)")).matches === true;
+  function isLessThanMobile() {
+    setIsMobileSize(window.innerWidth > 464);
+    // return setIsMobileSize(screen.width > 464);
+  }
+
+  console.log("innerWidth = " + window.innerWidth);
+  console.log("screen.width = " + screen.width);
 
   //chkecking screen size
-  useEffect(
-    function () {
-      window.addEventListener("resize", function () {
-        lessThanMobile ? setIsMobileSize(true) : setIsMobileSize(false);
-      });
-    },
-    [lessThanMobile, setIsMobileSize]
-  );
+  useEffect(function () {
+    // isLessThanMobile();
+    window.addEventListener("resize", isLessThanMobile);
 
-  return [isMobileSize];
+    return () => {
+      window.removeEventListener("resize", isLessThanMobile);
+    };
+  }, []);
+
+  return isMobileSize;
 }

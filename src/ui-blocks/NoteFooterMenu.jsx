@@ -34,8 +34,8 @@ const NoteAmount = styled.p`
     padding: 0.1rem 0.5rem;
     border-radius: 0.5rem;
     font-weight: 700;
-    color: var(--color-spring-green-800);
-    background-color: var(--color-spring-green-400);
+    color: var(--color-spring-green-200);
+    background-color: var(--color-ebony-600);
   }
 `;
 

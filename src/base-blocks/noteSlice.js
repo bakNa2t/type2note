@@ -24,6 +24,13 @@ const noteSlice = createSlice({
         localStorage.setItem("notes", JSON.stringify(state.notes));
       },
     },
+    editNote(state, action) {
+      const currentNote = state.notes.find(
+        (note) => note.id === action.payload.id
+      );
+      currentNote.content = action.payload.content;
+      localStorage.setItem("notes", JSON.stringify(state.notes));
+    },
     deleteNote(state, action) {
       state.notes = state.notes.filter((note) => note.id !== action.payload);
       localStorage.setItem("notes", JSON.stringify(state.notes));
