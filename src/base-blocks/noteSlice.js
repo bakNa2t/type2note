@@ -1,4 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, nanoid } from "@reduxjs/toolkit";
+import { format } from "date-fns";
 import toast from "react-hot-toast";
 
 import initialState from "./initial-state/initialState";
@@ -13,7 +14,8 @@ const noteSlice = createSlice({
           payload: {
             content: newNote,
             completed: false,
-            id: Math.random().toString(),
+            id: nanoid(),
+            time: format(new Date(), "p, dd/MM/yyyy"),
           },
         };
       },
