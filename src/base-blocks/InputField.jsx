@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { EnterOutlined } from "@ant-design/icons";
+import toast from "react-hot-toast";
 import styled from "styled-components";
 
 import Button from "../ui-blocks/Button";
@@ -36,9 +37,10 @@ function InputField() {
   function handleInput(e) {
     e.preventDefault();
 
-    if (!createNote) return;
-
-    if (createNote.trim() === "") return;
+    if (!createNote || createNote.trim() === "") {
+      toast.error("Please enter a note");
+      return;
+    }
 
     dispatch(addNote(createNote));
     setCreateNote("");

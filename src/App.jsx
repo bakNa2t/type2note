@@ -15,8 +15,6 @@ import { useResizeScreen } from "./hooks/useResizeScreen";
 function App() {
   const isMobileSize = useResizeScreen();
 
-  console.log(isMobileSize);
-
   return (
     <DarkModeProvider>
       <GlobalStyles />
