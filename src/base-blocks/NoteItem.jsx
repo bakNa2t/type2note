@@ -27,6 +27,7 @@ const NoteTextWrapper = styled.div`
 
 const NoteText = styled.p`
   width: 100%;
+  font-weight: 500;
   font-size: clamp(1.6rem, 3vw, 1.2rem);
 `;
 

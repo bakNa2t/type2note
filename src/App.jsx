@@ -11,6 +11,7 @@ import NoteFilterWrapper from "./ui-blocks/NoteFilterWrapper";
 import GlobalStyles from "./styles/GlobalStyles";
 import { DarkModeProvider } from "./context/DarkModeContext";
 import { useResizeScreen } from "./hooks/useResizeScreen";
+import Heading from "./ui-blocks/Heading";
 
 function App() {
   const isMobileSize = useResizeScreen();
@@ -20,7 +21,7 @@ function App() {
       <GlobalStyles />
       <Header />
       <AppLayout>
-        <h3>Start to type to store some notes</h3>
+        <Heading as={"h2"}>Get started to store notes</Heading>
         <InputField />
         <NoteField />
         <NoteFooterMenu isMobileSize={isMobileSize} />
