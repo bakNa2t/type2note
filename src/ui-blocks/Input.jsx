@@ -3,15 +3,17 @@ import PropTypes from "prop-types";
 
 const StyledInput = styled.input`
   width: 100%;
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 2rem;
   border: none;
   outline: none;
   background-color: transparent;
   color: var(--color-spring-green-200);
 
   &::placeholder {
+    font-size: 1.4rem;
     font-style: italic;
     color: var(--color-ebony-400);
+    filter: opacity(0.8);
   }
 `;
 
