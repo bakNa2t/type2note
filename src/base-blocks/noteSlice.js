@@ -37,35 +37,40 @@ const noteSlice = createSlice({
 
       state.editingNotes = {};
     },
-    deleteNote(state, action) {
+    cancelEditNote(state) {
+      if (state.notes.length) {
+        state.editingNotes = {};
+      }
+    },
+    deleteNote: (state, action) => {
       state.notes = state.notes.filter((note) => note.id !== action.payload);
       localStorage.setItem("notes", JSON.stringify(state.notes));
       toast.success("Note deleted");
     },
-    crossNote(state, action) {
+    crossNote: (state, action) => {
       const currentNote = state.notes.find(
         (note) => note.id === action.payload
       );
       currentNote.completed = !currentNote.completed;
       localStorage.setItem("notes", JSON.stringify(state.notes));
     },
-    clearAllNotes(state) {
+    clearAllNotes: (state) => {
       state.notes = [];
       localStorage.setItem("notes", JSON.stringify(state.notes));
       toast.success("All notes deleted");
     },
-    clearCompletedNotes(state) {
+    clearCompletedNotes: (state) => {
       state.notes = state.notes.filter((note) => !note.completed);
       localStorage.setItem("notes", JSON.stringify(state.notes));
       toast.success("All completed notes deleted");
     },
-    filterAll(state) {
+    filterAll: (state) => {
       state.filter = "all";
     },
-    filterActive(state) {
+    filterActive: (state) => {
       state.filter = "active";
     },
-    filterCompleted(state) {
+    filterCompleted: (state) => {
       state.filter = "completed";
     },
   },

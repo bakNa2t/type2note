@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export function useResizeScreen() {
-  const [isMobileSize, setIsMobileSize] = useState(false);
+  const [isMobileSize, setIsMobileSize] = useState(true);
 
   //compare screen size with mobile size (464) and set state
   function isLessThanMobile() {
