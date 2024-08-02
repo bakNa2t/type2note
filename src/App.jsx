@@ -5,7 +5,7 @@ import Header from "./ui-blocks/Header";
 import AppLayout from "./ui-blocks/AppLayout";
 import NoteField from "./ui-blocks/NoteField";
 import NoteFooterMenu from "./ui-blocks/NoteFooterMenu";
-import NoteFilter from "./ui-blocks/NoteFilter";
+// import NoteFilter from "./ui-blocks/NoteFilter";
 import NoteFilterWrapper from "./ui-blocks/NoteFilterWrapper";
 import Heading from "./ui-blocks/Heading";
 
@@ -27,11 +27,7 @@ function App() {
           <InputField />
           <NoteField />
           <NoteFooterMenu isMobileSize={isMobileSize} />
-          {!isMobileSize && (
-            <NoteFilterWrapper>
-              <NoteFilter />
-            </NoteFilterWrapper>
-          )}
+          {!isMobileSize && <NoteFilterWrapper />}
         </AppLayout>
         <Toaster
           position="top-center"
