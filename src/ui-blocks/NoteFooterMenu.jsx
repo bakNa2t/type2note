@@ -72,7 +72,7 @@ function NoteFooterMenu({ isMobileSize }) {
       <NoteAmount>
         <span>{amountNote}</span>notes left
       </NoteAmount>
-      {isMobileSize && <NoteFilter />}
+      {isMobileSize && <NoteFilter amountNote={amountNote} />}
       <NoteClearBtns>
         <Button
           size="md"
