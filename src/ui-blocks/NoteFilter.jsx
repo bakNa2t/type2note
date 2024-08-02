@@ -18,8 +18,9 @@ const StyledNoteFilter = styled.div`
 `;
 
 const FilterActive = styled.p`
-  color: var(--color-spring-green-500);
-  text-shadow: 0 0 0.6rem var(--color-spring-green-300);
+  color: var(--color-spring-green-200);
+  text-shadow: 0 0 1rem var(--color-spring-green-100);
+  font-weight: 500;
 `;
 
 function NoteFilter() {
@@ -45,7 +46,7 @@ function NoteFilter() {
   return (
     <StyledNoteFilter>
       <Button
-        size="xs"
+        size="sm"
         onClick={handleFilterAll}
         nothovered={String(toFiltered === "all")}
         disabled={toFiltered === "all"}
@@ -54,7 +55,7 @@ function NoteFilter() {
       </Button>
 
       <Button
-        size="xs"
+        size="sm"
         onClick={handleFilterActive}
         nothovered={String(toFiltered === "active")}
         disabled={toFiltered === "active"}
@@ -67,7 +68,7 @@ function NoteFilter() {
       </Button>
 
       <Button
-        size="xs"
+        size="sm"
         onClick={handleFilterCompleted}
         nothovered={String(toFiltered === "completed")}
         disabled={toFiltered === "completed"}
