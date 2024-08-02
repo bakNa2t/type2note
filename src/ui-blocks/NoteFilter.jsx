@@ -14,13 +14,33 @@ const StyledNoteFilter = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 1.6rem;
+  z-index: 10;
+
+  & button:hover > div {
+    display: none;
+  }
 `;
 
 const FilterActive = styled.p`
   color: var(--color-spring-green-200);
   text-shadow: 0 0 1rem var(--color-spring-green-100);
   font-weight: 500;
+`;
+
+const NoteCounter = styled.div`
+  position: absolute;
+  top: 0;
+  right: -1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0 0.4rem;
+  border: 1px solid var(--color-spring-green-200);
+  border-radius: 50%;
+  /* filter: drop-shadow(0 0 0.2rem var(--color-spring-green-300)); */
+  color: var(--color-spring-green-200);
+  background-color: transparent;
+  z-index: -1;
 `;
 
 function NoteFilter() {
@@ -65,6 +85,7 @@ function NoteFilter() {
         ) : (
           "Active"
         )}
+        {toFiltered === "active" ? null : <NoteCounter>0</NoteCounter>}
       </Button>
 
       <Button
@@ -78,6 +99,7 @@ function NoteFilter() {
         ) : (
           "Completed"
         )}
+        {toFiltered === "completed" ? null : <NoteCounter>0</NoteCounter>}
       </Button>
     </StyledNoteFilter>
   );
