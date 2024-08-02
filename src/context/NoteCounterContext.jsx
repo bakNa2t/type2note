@@ -24,7 +24,7 @@ function NoteCounterProvider({ children }) {
   );
 }
 
-function useNoteContext() {
+function useNoteCounter() {
   const context = useContext(NoteCounterContext);
 
   if (context === undefined)
@@ -33,4 +33,4 @@ function useNoteContext() {
   return context;
 }
 
-export { NoteCounterProvider, useNoteContext };
+export { NoteCounterProvider, useNoteCounter };

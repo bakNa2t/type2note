@@ -12,6 +12,7 @@ import {
   clearCompletedNotes,
   selectFilteredNotes,
 } from "../base-blocks/noteSlice";
+import { useNoteCounter } from "../context/NoteCounterContext";
 
 const StyledNoteFooterMenu = styled.div`
   display: flex;
@@ -45,13 +46,9 @@ function NoteFooterMenu({ isMobileSize }) {
     isMobileSize: PropTypes.bool,
   };
 
-  const amountNote = useSelector(
-    (state) => state.note.notes.filter((note) => note.completed !== true).length
-  );
+  const { activeNotes, completedNotes } = useNoteCounter();
   const notes = useSelector(selectFilteredNotes);
   const dispatch = useDispatch();
-
-  const completed = notes.filter((note) => note.completed === true).length;
 
   function handleClearAllNotes() {
     if (notes.length === 0) return;
@@ -70,15 +67,17 @@ function NoteFooterMenu({ isMobileSize }) {
   return (
     <StyledNoteFooterMenu>
       <NoteAmount>
-        <span>{amountNote}</span>notes left
+        <span>{activeNotes}</span>notes left
       </NoteAmount>
-      {isMobileSize && <NoteFilter amountNote={amountNote} />}
+      {isMobileSize && (
+        <NoteFilter activeNotes={activeNotes} completedNotes={completedNotes} />
+      )}
       <NoteClearBtns>
         <Button
           size="md"
           onClick={handleClearCompletedNotes}
           cleardesc={{ content: "Clear completed" }}
-          disabled={notes.length === 0 || completed === 0}
+          disabled={notes.length === 0 || completedNotes === 0}
         >
           <ClearOutlined />
         </Button>

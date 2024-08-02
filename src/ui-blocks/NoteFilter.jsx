@@ -43,17 +43,15 @@ const NoteCounter = styled.div`
   z-index: -1;
 `;
 
-function NoteFilter({ amountNote }) {
+function NoteFilter({ activeNotes, completedNotes }) {
   NoteFilter.propTypes = {
-    isMobileSize: PropTypes.bool,
-    amountNote: PropTypes.number,
+    // isMobileSize: PropTypes.bool,
+    activeNotes: PropTypes.number,
+    completedNotes: PropTypes.number,
   };
 
   const dispatch = useDispatch();
   const toFiltered = useSelector((state) => state.note.filter);
-  const completedNote = useSelector(
-    (state) => state.note.notes.filter((note) => note.completed === true).length
-  );
 
   function handleFilterAll() {
     dispatch(filterAll());
@@ -90,7 +88,7 @@ function NoteFilter({ amountNote }) {
           "Active"
         )}
         {toFiltered === "active" ? null : (
-          <NoteCounter>{amountNote}</NoteCounter>
+          <NoteCounter>{activeNotes}</NoteCounter>
         )}
       </Button>
 
@@ -106,7 +104,7 @@ function NoteFilter({ amountNote }) {
           "Completed"
         )}
         {toFiltered === "completed" ? null : (
-          <NoteCounter>{completedNote}</NoteCounter>
+          <NoteCounter>{completedNotes}</NoteCounter>
         )}
       </Button>
     </StyledNoteFilter>
