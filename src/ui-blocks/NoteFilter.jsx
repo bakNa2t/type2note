@@ -15,7 +15,6 @@ const StyledNoteFilter = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1.6rem;
-  z-index: 10;
 
   & button:hover > div {
     display: none;
@@ -40,7 +39,6 @@ const NoteCounter = styled.div`
   /* filter: drop-shadow(0 0 0.2rem var(--color-spring-green-300)); */
   color: var(--color-spring-green-200);
   background-color: transparent;
-  z-index: -1;
 `;
 
 function NoteFilter({ activeNotes, completedNotes }) {
@@ -87,7 +85,7 @@ function NoteFilter({ activeNotes, completedNotes }) {
         ) : (
           "Active"
         )}
-        {toFiltered === "active" ? null : (
+        {activeNotes === 0 ? null : toFiltered === "active" ? null : (
           <NoteCounter>{activeNotes}</NoteCounter>
         )}
       </Button>
@@ -103,7 +101,7 @@ function NoteFilter({ activeNotes, completedNotes }) {
         ) : (
           "Completed"
         )}
-        {toFiltered === "completed" ? null : (
+        {completedNotes === 0 ? null : toFiltered === "completed" ? null : (
           <NoteCounter>{completedNotes}</NoteCounter>
         )}
       </Button>
