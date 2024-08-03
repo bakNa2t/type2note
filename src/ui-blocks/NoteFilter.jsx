@@ -33,17 +33,16 @@ const NoteCounter = styled.div`
   right: -1.2rem;
   font-size: 1rem;
   font-weight: 500;
-  padding: 0 0.4rem;
+  padding: 0 0.45rem;
   border: 1px solid var(--color-spring-green-200);
   border-radius: 50%;
-  /* filter: drop-shadow(0 0 0.2rem var(--color-spring-green-300)); */
+  filter: drop-shadow(0 0 0.1rem var(--color-spring-green-400));
   color: var(--color-spring-green-200);
   background-color: transparent;
 `;
 
 function NoteFilter({ activeNotes, completedNotes }) {
   NoteFilter.propTypes = {
-    // isMobileSize: PropTypes.bool,
     activeNotes: PropTypes.number,
     completedNotes: PropTypes.number,
   };

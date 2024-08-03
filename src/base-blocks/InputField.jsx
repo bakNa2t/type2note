@@ -18,10 +18,12 @@ const StyledInputField = styled.form`
   background-color: var(--color-ebony-800);
   margin: 2rem 0;
   overflow: hidden;
+  box-shadow: 0 0 0.8rem 0.6rem var(--color-spring-green-200);
 
   &:focus-within {
-    outline: 0.4rem solid var(--color-ebony-400);
+    outline: 0.6rem solid var(--color-ebony-500);
     outline-offset: 2px;
+    box-shadow: 0 0 1.4rem 0.8rem var(--color-spring-green-200);
   }
 `;
 
