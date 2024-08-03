@@ -19,7 +19,8 @@ const sizes = {
   `,
   xl: css`
     font-size: 2.4rem;
-    padding: 1.3rem;
+    padding: 1rem;
+    filter: drop-shadow(0 0 1rem var(--color-spring-green-700));
   `,
 };
 
