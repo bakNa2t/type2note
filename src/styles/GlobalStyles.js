@@ -130,6 +130,20 @@ h6 {
   overflow-wrap: break-word;
   hyphens: auto;
 }
+
+&::-webkit-scrollbar {
+    width: 1rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--color-ebony-800);
+    border-radius: 0.5rem;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: var(--color-ebony-200);
+    border-radius: 0.5rem;
+  }
 `;
 
 export default GlobalStyles;
