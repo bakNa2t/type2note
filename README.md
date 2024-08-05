@@ -32,3 +32,13 @@ npm run dev
 ```
 
 The development server will be running on http://localhost:5173. You can open this URL in your web browser to view the type2note app.
+
+click here to visit => [_**Type2Note**_](https://type2note.vercel.app/)
+
+<div align="center">
+    <p style="width: 500px;">
+        <a href="https://type2note.vercel.app/" target="_blank" >
+            <img alt="Type 2 Note" src ="./public/images/t2n-readme.png" width="600">
+        </a>
+    </p>
+</div>
