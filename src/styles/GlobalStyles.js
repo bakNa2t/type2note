@@ -6,15 +6,6 @@ const GlobalStyles = createGlobalStyle`
     &, &.light-mode {
         --background-gradient: linear-gradient(hsl(157, 100%, 49%), hsl(106, 29%, 37%));
 
-        /* --color-blue: #3a7bfd;
-        --color-blue-dark: #0070f3;
-
-        --color-blue-zola-600: #393a4c;
-        --color-blue-zola-700: #25273c;
-        --color-blue-light-200: #e4e5f1;
-        --color-blue-light-300: #c2c2c2;
-        --color-blue-light-700: #777a92; */
-
         //ebony
         --color-ebony-100:#e3e6e1;
         --color-ebony-200:#c8ccc3;

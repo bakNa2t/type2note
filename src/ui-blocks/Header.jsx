@@ -18,7 +18,13 @@ const StyledHeader = styled.header`
   }
 `;
 
-const Logo = styled.div`
+const LogoWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+`;
+
+const LogoTitle = styled.div`
   font-size: clamp(2rem, 5vw, 3rem);
   text-transform: uppercase;
   font-weight: 700;
@@ -28,12 +34,30 @@ const Logo = styled.div`
   -webkit-text-stroke: 0.1rem var(--color-spring-green-600);
 `;
 
+const Logo = styled.img`
+  display: block;
+  width: 5rem;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 0.4rem var(--color-spring-green-700));
+  outline: 4px solid var(--color-spring-green-700);
+
+  @media screen and (max-width: 468px) {
+    width: 4rem;
+  }
+`;
+
 function Header() {
   const { isDarkMode, toggleDarkMode } = useDarkMode();
 
   return (
     <StyledHeader>
-      <Logo>Type 2 Note</Logo>
+      <LogoWrapper>
+        <Logo src="images/logo.png" alt="logo" />
+        <LogoTitle>Type 2 Note</LogoTitle>
+      </LogoWrapper>
       <Button size="xl" color="theme" onClick={toggleDarkMode}>
         {isDarkMode ? <SunOutlined /> : <MoonOutlined />}
       </Button>
