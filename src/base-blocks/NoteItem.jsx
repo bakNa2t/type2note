@@ -4,6 +4,8 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 
 import Button from "../ui-blocks/Button";
+import Modal from "../ui-blocks/Modal";
+import ConfirmDelete from "../ui-blocks/ConfirmDelete";
 import CheckboxCustom from "../ui-blocks/CheckboxCustom";
 
 import { crossNote, deleteNote } from "./noteSlice";
@@ -77,10 +79,19 @@ function NoteItem({ note }) {
       )}
       {/*<Button size="sm">
         <EditOutlined />
-       </Button> */}
-      <Button size="sm" onClick={handleDeleteNote}>
-        <CloseOutlined />
-      </Button>
+        </Button> */}
+
+      <Modal>
+        <Modal.Open opens="delete">
+          <Button size="sm">
+            <CloseOutlined />
+          </Button>
+        </Modal.Open>
+
+        <Modal.Window name="delete">
+          <ConfirmDelete onConfirm={handleDeleteNote} />
+        </Modal.Window>
+      </Modal>
     </StyledNoteItem>
   );
 }

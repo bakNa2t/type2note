@@ -1,10 +1,10 @@
 import { cloneElement, createContext, useContext, useState } from "react";
+import { createPortal } from "react-dom";
+import { CloseOutlined } from "@ant-design/icons";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
 import { useOutsideClick } from "../hooks/useOutsideClick";
-import { createPortal } from "react-dom";
-import { CloseOutlined } from "@ant-design/icons";
 
 const StyledModal = styled.div`
   position: fixed;
@@ -65,7 +65,7 @@ function Modal({ children }) {
   const open = setOpenName;
 
   return (
-    <ModalContext.Provider value={{ openName, open, close }}>
+    <ModalContext.Provider value={{ openName, close, open }}>
       {children}
     </ModalContext.Provider>
   );
@@ -82,10 +82,10 @@ function Open({ opens: opensWindowName, children }) {
   return cloneElement(children, { onClick: () => open(opensWindowName) });
 }
 
-function Window({ name, children }) {
+function Window({ children, name }) {
   Window.propTypes = {
-    name: PropTypes.string,
     children: PropTypes.node,
+    name: PropTypes.string,
   };
 
   const { openName, close } = useContext(ModalContext);
@@ -101,7 +101,8 @@ function Window({ name, children }) {
         </Button>
         <div>{cloneElement(children, { onCloseModal: close })}</div>
       </StyledModal>
-    </Overlay>
+    </Overlay>,
+    document.body
   );
 }
 
