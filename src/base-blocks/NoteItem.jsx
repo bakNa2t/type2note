@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { CloseOutlined } from "@ant-design/icons";
+import { CloseOutlined /*, EditOutlined*/ } from "@ant-design/icons";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
@@ -75,6 +75,9 @@ function NoteItem({ note }) {
           <NoteText>{content}</NoteText>
         </NoteTextWrapper>
       )}
+      {/*<Button size="sm">
+        <EditOutlined />
+       </Button> */}
       <Button size="sm" onClick={handleDeleteNote}>
         <CloseOutlined />
       </Button>
