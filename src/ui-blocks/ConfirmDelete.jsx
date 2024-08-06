@@ -11,7 +11,7 @@ const StyledConfirmDelete = styled.div`
   gap: 1.2rem;
 
   & p {
-    color: var(--color-ebony-300);
+    color: var(--color-ebony-800);
     margin-bottom: 1.2rem;
   }
 
@@ -32,12 +32,14 @@ function ConfirmDelete({ onConfirm, onCloseModal }) {
     <StyledConfirmDelete>
       <Heading as={"h2"}>Delete note</Heading>
       <p>Are you sure you want to delete this note?</p>
-      <Button size="md" onClick={onCloseModal}>
-        Cancel
-      </Button>
-      <Button size="md" onClick={onConfirm}>
-        Delete
-      </Button>
+      <div>
+        <Button size="md" color="theme" onClick={onCloseModal}>
+          Cancel
+        </Button>
+        <Button size="md" color="theme" onClick={onConfirm}>
+          Delete
+        </Button>
+      </div>
     </StyledConfirmDelete>
   );
 }
