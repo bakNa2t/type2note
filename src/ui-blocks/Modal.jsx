@@ -13,7 +13,7 @@ const StyledModal = styled.div`
   transform: translate(-50%, -50%);
   background-color: var(--color-ebony-200);
   border-radius: 1rem;
-  box-shadow: 0 0 0.8rem 0.6rem var(--color-spring-green-200);
+  box-shadow: 0 0 1rem 0.4rem var(--color-spring-green-700);
   padding: 3.2rem 4rem;
   transition: all 0.5s;
 `;
@@ -42,13 +42,14 @@ const Button = styled.button`
   right: 1.9rem;
 
   &:hover {
-    background-color: var(--color-ebony-200);
+    background-color: var(--color-ebony-800);
   }
 
   & svg {
     width: 2.4rem;
     height: 2.4rem;
-    color: var(--color-ebony-200);
+    color: var(--color-spring-green-200);
+    transform: translateY(2px);
   }
 `;
 

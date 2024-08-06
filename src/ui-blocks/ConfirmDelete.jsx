@@ -20,6 +20,10 @@ const StyledConfirmDelete = styled.div`
     justify-content: flex-end;
     gap: 1.2rem;
   }
+
+  @media screen and (max-width: 468px) {
+    width: 25rem;
+  }
 `;
 
 function ConfirmDelete({ onConfirm, onCloseModal }) {
@@ -30,14 +34,14 @@ function ConfirmDelete({ onConfirm, onCloseModal }) {
 
   return (
     <StyledConfirmDelete>
-      <Heading as={"h2"}>Delete note</Heading>
+      <Heading as={"h3"}>Delete note</Heading>
       <p>Are you sure you want to delete this note?</p>
       <div>
         <Button size="md" color="theme" onClick={onCloseModal}>
-          Cancel
+          Nope
         </Button>
         <Button size="md" color="theme" onClick={onConfirm}>
-          Delete
+          Sure
         </Button>
       </div>
     </StyledConfirmDelete>
