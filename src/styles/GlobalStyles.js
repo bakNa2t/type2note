@@ -6,6 +6,8 @@ const GlobalStyles = createGlobalStyle`
     &, &.light-mode {
         --background-gradient: linear-gradient(hsl(157, 100%, 49%), hsl(106, 29%, 37%));
 
+        --backdrop-color: rgba(255, 255, 255, 0.1);
+
         //ebony
         --color-ebony-100:#e3e6e1;
         --color-ebony-200:#c8ccc3;
