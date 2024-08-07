@@ -53,15 +53,13 @@ function NoteFooterMenu({ isMobileSize }) {
   function handleClearAllNotes() {
     if (notes.length === 0) return;
 
-    if (confirm("Are you sure you want to delete all notes?"))
-      dispatch(clearAllNotes());
+    dispatch(clearAllNotes());
   }
 
   function handleClearCompletedNotes() {
     if (notes.length === 0) return;
 
-    if (confirm("Are you sure you want to delete all completed notes?"))
-      dispatch(clearCompletedNotes());
+    dispatch(clearCompletedNotes());
   }
 
   return (
