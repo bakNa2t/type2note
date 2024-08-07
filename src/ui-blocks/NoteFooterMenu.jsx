@@ -13,6 +13,8 @@ import {
   selectFilteredNotes,
 } from "../base-blocks/noteSlice";
 import { useNoteCounter } from "../context/NoteCounterContext";
+import Modal from "./Modal";
+import ConfirmDelete from "./ConfirmDelete";
 
 const StyledNoteFooterMenu = styled.div`
   display: flex;
@@ -70,25 +72,32 @@ function NoteFooterMenu({ isMobileSize }) {
       {isMobileSize && (
         <NoteFilter activeNotes={activeNotes} completedNotes={completedNotes} />
       )}
-      <NoteClearBtns>
-        <Button
-          size="md"
-          onClick={handleClearCompletedNotes}
-          cleardesc={{ content: "Clear completed" }}
-          disabled={notes.length === 0 || completedNotes === 0}
-        >
-          <ClearOutlined />
-        </Button>
+      <Modal>
+        <NoteClearBtns>
+          <Modal.Open opens="clear-completed-notes">
+            <Button
+              size="md"
+              cleardesc={{ content: "Clear completed" }}
+              disabled={notes.length === 0 || completedNotes === 0}
+            >
+              <ClearOutlined />
+            </Button>
+          </Modal.Open>
 
-        <Button
-          size="md"
-          onClick={handleClearAllNotes}
-          cleardesc={{ content: "Clear all" }}
-          disabled={notes.length === 0}
-        >
-          <DeleteOutlined />
-        </Button>
-      </NoteClearBtns>
+          <Button
+            size="md"
+            onClick={handleClearAllNotes}
+            cleardesc={{ content: "Clear all" }}
+            disabled={notes.length === 0}
+          >
+            <DeleteOutlined />
+          </Button>
+
+          <Modal.Window name="clear-completed-notes">
+            <ConfirmDelete onConfirm={() => handleClearCompletedNotes()} />
+          </Modal.Window>
+        </NoteClearBtns>
+      </Modal>
     </StyledNoteFooterMenu>
   );
 }
