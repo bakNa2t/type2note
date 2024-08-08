@@ -95,11 +95,17 @@ function NoteFooterMenu({ isMobileSize }) {
           </Modal.Open>
 
           <Modal.Window name="clear-completed-notes">
-            <ConfirmDelete onConfirm={() => handleClearCompletedNotes()} />
+            <ConfirmDelete
+              desc="completed notes"
+              onConfirm={() => handleClearCompletedNotes()}
+            />
           </Modal.Window>
 
           <Modal.Window name="clear-all-notes">
-            <ConfirmDelete onConfirm={() => handleClearAllNotes()} />
+            <ConfirmDelete
+              desc="all notes"
+              onConfirm={() => handleClearAllNotes()}
+            />
           </Modal.Window>
         </NoteClearBtns>
       </Modal>
