@@ -84,17 +84,22 @@ function NoteFooterMenu({ isMobileSize }) {
             </Button>
           </Modal.Open>
 
-          <Button
-            size="md"
-            onClick={handleClearAllNotes}
-            cleardesc={{ content: "Clear all" }}
-            disabled={notes.length === 0}
-          >
-            <DeleteOutlined />
-          </Button>
+          <Modal.Open opens={"clear-all-notes"}>
+            <Button
+              size="md"
+              cleardesc={{ content: "Clear all" }}
+              disabled={notes.length === 0}
+            >
+              <DeleteOutlined />
+            </Button>
+          </Modal.Open>
 
           <Modal.Window name="clear-completed-notes">
             <ConfirmDelete onConfirm={() => handleClearCompletedNotes()} />
+          </Modal.Window>
+
+          <Modal.Window name="clear-all-notes">
+            <ConfirmDelete onConfirm={() => handleClearAllNotes()} />
           </Modal.Window>
         </NoteClearBtns>
       </Modal>
