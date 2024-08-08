@@ -88,7 +88,7 @@ function NoteItem({ note }) {
         </Modal.Open>
 
         <Modal.Window name="delete">
-          <ConfirmDelete onConfirm={handleDeleteNote} />
+          <ConfirmDelete onConfirm={handleDeleteNote} desc="note" />
         </Modal.Window>
       </Modal>
     </StyledNoteItem>
