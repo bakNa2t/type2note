@@ -21,21 +21,22 @@ const StyledConfirmDelete = styled.div`
     gap: 1.2rem;
   }
 
-  @media screen and (max-width: 468px) {
+  @media screen and (max-width: 500px) {
     width: 25rem;
   }
 `;
 
-function ConfirmDelete({ onConfirm, onCloseModal }) {
+function ConfirmDelete({ onConfirm, onCloseModal, desc }) {
   ConfirmDelete.propTypes = {
     onConfirm: PropTypes.func,
     onCloseModal: PropTypes.func,
+    desc: PropTypes.string,
   };
 
   return (
     <StyledConfirmDelete>
-      <Heading as={"h3"}>Delete note</Heading>
-      <p>Are you sure you want to delete this note?</p>
+      <Heading as={"h3"}>Delete {desc}</Heading>
+      <p>Are you sure you want to delete {desc}?</p>
       <div>
         <Button size="md" color="theme" onClick={onCloseModal}>
           Nope

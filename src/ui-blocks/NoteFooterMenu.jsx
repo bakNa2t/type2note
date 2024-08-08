@@ -84,7 +84,7 @@ function NoteFooterMenu({ isMobileSize }) {
             </Button>
           </Modal.Open>
 
-          <Modal.Open opens={"clear-all-notes"}>
+          <Modal.Open opens="clear-all-notes">
             <Button
               size="md"
               cleardesc={{ content: "Clear all" }}
