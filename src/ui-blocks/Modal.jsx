@@ -42,13 +42,15 @@ const Button = styled.button`
   right: 1.9rem;
 
   &:hover {
-    background-color: var(--color-ebony-800);
+    background-color: var(--color-ebony-400);
   }
 
   & svg {
     width: 2.4rem;
     height: 2.4rem;
-    color: var(--color-spring-green-200);
+    /* color: var(--color-spring-green-200); */
+    fill: var(--color-spring-green-800);
+    stroke: var(--color-spring-green-200);
     transform: translateY(2px);
   }
 `;
@@ -72,7 +74,7 @@ function Modal({ children }) {
   );
 }
 
-function Open({ opens: opensWindowName, children }) {
+function Open({ children, opens: opensWindowName }) {
   Open.propTypes = {
     opens: PropTypes.string,
     children: PropTypes.node,
