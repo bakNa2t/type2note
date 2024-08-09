@@ -1,4 +1,4 @@
-# Type 2 Note App implemented with React, Vite, Redux, Styled Components and Reduxjs/toolkit
+# Type 2 Note App implemented with React, Vite, Redux, Styled Components, React Hot Toaster and Reduxjs/toolkit
 
 ### Getting Started
 
