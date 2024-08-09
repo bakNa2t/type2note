@@ -33,6 +33,14 @@ npm run dev
 
 The development server will be running on http://localhost:5173. You can open this URL in your web browser to view the type2note app.
 
+#### Developed with:
+
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- [Styled Components](https://styled-components.com/)
+- [React Hot Toast](https://react-hot-toast.com/)
+- [Recharts](https://recharts.org/)
+
 click here to visit => [_**Type2Note**_](https://type2note.vercel.app/)
 
 <div align="center">
