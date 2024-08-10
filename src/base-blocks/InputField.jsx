@@ -7,6 +7,7 @@ import styled from "styled-components";
 import Button from "../ui-blocks/Button";
 import Input from "../ui-blocks/Input";
 import IconWrapper from "../ui-blocks/IconWrapper";
+import InputWrapper from "../ui-blocks/InputWrapper";
 
 import { addNote } from "./noteSlice";
 
@@ -25,11 +26,6 @@ const StyledInputField = styled.form`
     outline-offset: 2px;
     box-shadow: 0 0 1.4rem 0.8rem var(--color-spring-green-200);
   }
-`;
-
-const InputWrapper = styled.div`
-  position: relative;
-  width: 100%;
 `;
 
 function InputField() {
