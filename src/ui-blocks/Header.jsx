@@ -58,7 +58,12 @@ function Header() {
         <Logo src="images/logo.png" alt="logo" />
         <LogoTitle>Type 2 Note</LogoTitle>
       </LogoWrapper>
-      <Button size="xl" color="theme" onClick={toggleDarkMode}>
+      <Button
+        size="xl"
+        color="theme"
+        filter="shadowMd"
+        onClick={toggleDarkMode}
+      >
         {isDarkMode ? <SunOutlined /> : <MoonOutlined />}
       </Button>
     </StyledHeader>

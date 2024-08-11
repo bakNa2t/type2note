@@ -20,7 +20,7 @@ const sizes = {
   xl: css`
     font-size: 2.4rem;
     padding: 1rem;
-    filter: drop-shadow(0 0 1rem var(--color-spring-green-700));
+    /* filter: drop-shadow(0 0 1rem var(--color-spring-green-700)); */
   `,
 };
 
@@ -31,8 +31,11 @@ const colors = {
 };
 
 const filters = {
-  shadow: css`
-    filter: drop-shadow(0 0 1rem var(--color-spring-green-300));
+  shadowSm: css`
+    filter: drop-shadow(0 0 0.8rem var(--color-spring-green-700));
+  `,
+  shadowMd: css`
+    filter: drop-shadow(0 0 1.2rem var(--color-spring-green-700));
   `,
 };
 

@@ -77,6 +77,7 @@ function NoteFooterMenu({ isMobileSize }) {
           <Modal.Open opens="clear-completed-notes">
             <Button
               size="md"
+              filter="shadowSm"
               cleardesc={{ content: "Clear completed" }}
               disabled={notes.length === 0 || completedNotes === 0}
             >
@@ -87,6 +88,7 @@ function NoteFooterMenu({ isMobileSize }) {
           <Modal.Open opens="clear-all-notes">
             <Button
               size="md"
+              filter="shadowSm"
               cleardesc={{ content: "Clear all" }}
               disabled={notes.length === 0}
             >
