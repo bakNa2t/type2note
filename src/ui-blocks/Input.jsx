@@ -12,7 +12,7 @@ const StyledInput = styled.input`
   &::placeholder {
     font-size: 1.4rem;
     font-style: italic;
-    color: var(--color-ebony-400);
+    color: var(--color-ebony-200);
     filter: opacity(0.8);
   }
 

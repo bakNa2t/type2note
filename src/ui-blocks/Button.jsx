@@ -30,6 +30,12 @@ const colors = {
   `,
 };
 
+const filters = {
+  shadow: css`
+    filter: drop-shadow(0 0 1rem var(--color-spring-green-300));
+  `,
+};
+
 const Button = styled.button`
   position: relative;
   display: flex;
@@ -44,6 +50,8 @@ const Button = styled.button`
   ${(props) => sizes[props.size]}
 
   ${(props) => colors[props.color]}
+
+  ${(props) => filters[props.filter]}
 
   ${(props) =>
     props.nothovered
