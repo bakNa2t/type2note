@@ -8,6 +8,7 @@ import PropTypes from "prop-types";
 import Button from "../ui-blocks/Button";
 import Input from "../ui-blocks/Input";
 import IconWrapper from "../ui-blocks/IconWrapper";
+import InputWrapper from "../ui-blocks/InputWrapper";
 
 import { editNote as editCurrentNote } from "./noteSlice";
 
@@ -24,11 +25,6 @@ const StyledInputEditField = styled.form`
     outline: 0.4rem solid var(--color-ebony-400);
     outline-offset: 2px;
   }
-`;
-
-const InputWrapper = styled.div`
-  position: relative;
-  width: 100%;
 `;
 
 function InputEditField({ note }) {
