@@ -1,12 +1,12 @@
 import { Toaster } from "react-hot-toast";
 
 import InputField from "./base-blocks/InputField";
+import Heading from "./ui-blocks/Heading";
 import Header from "./ui-blocks/Header";
 import AppLayout from "./ui-blocks/AppLayout";
 import NoteField from "./ui-blocks/NoteField";
 import NoteFooterMenu from "./ui-blocks/NoteFooterMenu";
 import NoteFilterWrapper from "./ui-blocks/NoteFilterWrapper";
-import Heading from "./ui-blocks/Heading";
 
 import GlobalStyles from "./styles/GlobalStyles";
 import { useResizeScreen } from "./hooks/useResizeScreen";
@@ -24,7 +24,7 @@ function App() {
           <GlobalStyles />
           <Header />
           <AppLayout>
-            <Heading as={"h2"}>Get started to store notes</Heading>
+            <Heading />
             <InputField />
             <NoteField />
             <NoteFooterMenu isMobileSize={isMobileSize} />
