@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
+import { useNoteLang } from "../context/NoteLangContext";
+import { content } from "../data/content";
+
 const StyledInput = styled.input`
   width: 100%;
   padding: 1rem 4.4rem 1rem 2rem;
@@ -28,10 +31,13 @@ function Input({ value, onChange }) {
     onChange: PropTypes.func,
   };
 
+  const { lang } = useNoteLang();
+  const { placeholder } = lang === "en" ? content.en : content.ru;
+
   return (
     <StyledInput
       type="text"
-      placeholder="Add new note..."
+      placeholder={placeholder}
       name="create-note"
       value={value}
       onChange={onChange}

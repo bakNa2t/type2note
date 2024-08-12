@@ -1,10 +1,10 @@
 export const content = {
   en: {
     appTitle: "Get started to store notes",
-    placeholder: "Write your note here...",
+    placeholder: "Add new note...",
   },
   ru: {
-    appTitle: "Пора вести заметки",
-    placeholder: "Напишите заметку...",
+    appTitle: "Время начать хранить заметки",
+    placeholder: "Добавить новую заметку...",
   },
 };
