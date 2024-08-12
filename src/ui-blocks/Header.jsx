@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Button from "./Button";
 
 import { useDarkMode } from "../context/DarkModeContext";
-import { useToggleLang } from "../hooks/useToggleLang";
+import { useNoteLang } from "../context/NoteLangContext";
 
 const StyledHeader = styled.header`
   display: flex;
@@ -57,7 +57,7 @@ const ButtonWrapper = styled.div`
 
 function Header() {
   const { isDarkMode, toggleDarkMode } = useDarkMode();
-  const { lang, toggleLang } = useToggleLang();
+  const { lang, toggleLang } = useNoteLang();
 
   return (
     <StyledHeader>
