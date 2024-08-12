@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Button from "./Button";
 
 import { useDarkMode } from "../context/DarkModeContext";
+import { useToggleLang } from "../hooks/useToggleLang";
 
 const StyledHeader = styled.header`
   display: flex;
@@ -51,12 +52,12 @@ const Logo = styled.img`
 
 const ButtonWrapper = styled.div`
   display: flex;
-  /* justify-content: space-between; */
   gap: 3rem;
 `;
 
 function Header() {
   const { isDarkMode, toggleDarkMode } = useDarkMode();
+  const { lang, toggleLang } = useToggleLang();
 
   return (
     <StyledHeader>
@@ -73,8 +74,13 @@ function Header() {
         >
           {isDarkMode ? <SunOutlined /> : <MoonOutlined />}
         </Button>
-        <Button size="lg" color="theme" filter="shadowMd">
-          RU
+        <Button
+          size="lg"
+          color="theme"
+          filter="shadowMd"
+          onClick={() => toggleLang()}
+        >
+          {lang === "en" ? "RU" : "EN"}
         </Button>
       </ButtonWrapper>
     </StyledHeader>
