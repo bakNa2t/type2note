@@ -6,7 +6,7 @@ const StyledAppLayout = styled.div`
   margin: auto;
   padding: 1rem;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 500px) {
     padding: 3rem;
   }
 `;

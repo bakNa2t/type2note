@@ -49,6 +49,12 @@ const Logo = styled.img`
   }
 `;
 
+const ButtonWrapper = styled.div`
+  display: flex;
+  /* justify-content: space-between; */
+  gap: 3rem;
+`;
+
 function Header() {
   const { isDarkMode, toggleDarkMode } = useDarkMode();
 
@@ -58,14 +64,19 @@ function Header() {
         <Logo src="images/logo.png" alt="logo" />
         <LogoTitle>Type 2 Note</LogoTitle>
       </LogoWrapper>
-      <Button
-        size="xl"
-        color="theme"
-        filter="shadowMd"
-        onClick={toggleDarkMode}
-      >
-        {isDarkMode ? <SunOutlined /> : <MoonOutlined />}
-      </Button>
+      <ButtonWrapper>
+        <Button
+          size="xl"
+          color="theme"
+          filter="shadowMd"
+          onClick={toggleDarkMode}
+        >
+          {isDarkMode ? <SunOutlined /> : <MoonOutlined />}
+        </Button>
+        <Button size="lg" color="theme" filter="shadowMd">
+          RU
+        </Button>
+      </ButtonWrapper>
     </StyledHeader>
   );
 }
