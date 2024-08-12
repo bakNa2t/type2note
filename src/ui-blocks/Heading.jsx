@@ -13,7 +13,7 @@ const StyledHeading = styled.div`
 
 function Heading() {
   const { lang } = useNoteLang();
-  const { appTitle } = content[lang];
+  const { appTitle } = lang === "en" ? content.en : content.ru;
 
   return <StyledHeading as={"h2"}>{appTitle}</StyledHeading>;
 }

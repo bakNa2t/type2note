@@ -4,7 +4,7 @@ import InputField from "./base-blocks/InputField";
 import Heading from "./ui-blocks/Heading";
 import Header from "./ui-blocks/Header";
 import AppLayout from "./ui-blocks/AppLayout";
-import NoteField from "./ui-blocks/NoteField";
+import NoteField from "./base-blocks/NoteField";
 import NoteFooterMenu from "./ui-blocks/NoteFooterMenu";
 import NoteFilterWrapper from "./ui-blocks/NoteFilterWrapper";
 
