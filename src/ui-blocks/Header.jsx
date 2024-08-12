@@ -53,6 +53,10 @@ const Logo = styled.img`
 const ButtonWrapper = styled.div`
   display: flex;
   gap: 3rem;
+
+  @media screen and (max-width: 500px) {
+    gap: 0.4rem;
+  }
 `;
 
 function Header() {

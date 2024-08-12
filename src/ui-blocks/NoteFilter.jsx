@@ -9,6 +9,8 @@ import {
   filterAll,
   filterCompleted,
 } from "../base-blocks/noteSlice";
+import { useNoteLang } from "../context/NoteLangContext";
+import { content } from "../data/content";
 
 const StyledNoteFilter = styled.div`
   display: flex;
@@ -49,6 +51,8 @@ function NoteFilter({ activeNotes, completedNotes }) {
 
   const dispatch = useDispatch();
   const toFiltered = useSelector((state) => state.note.filter);
+  const { lang } = useNoteLang();
+  const { filter } = lang === "en" ? content.en : content.ru;
 
   function handleFilterAll() {
     dispatch(filterAll());
@@ -70,7 +74,11 @@ function NoteFilter({ activeNotes, completedNotes }) {
         nothovered={String(toFiltered === "all")}
         disabled={toFiltered === "all"}
       >
-        {toFiltered === "all" ? <FilterActive>All</FilterActive> : "All"}
+        {toFiltered === "all" ? (
+          <FilterActive>{filter.all}</FilterActive>
+        ) : (
+          filter.all
+        )}
       </Button>
 
       <Button
@@ -80,9 +88,9 @@ function NoteFilter({ activeNotes, completedNotes }) {
         disabled={toFiltered === "active"}
       >
         {toFiltered === "active" ? (
-          <FilterActive>Active</FilterActive>
+          <FilterActive>{filter.active}</FilterActive>
         ) : (
-          "Active"
+          filter.active
         )}
         {activeNotes === 0 ? null : toFiltered === "active" ? null : (
           <NoteCounter>{activeNotes}</NoteCounter>
@@ -96,9 +104,9 @@ function NoteFilter({ activeNotes, completedNotes }) {
         disabled={toFiltered === "completed"}
       >
         {toFiltered === "completed" ? (
-          <FilterActive>Completed</FilterActive>
+          <FilterActive>{filter.completed}</FilterActive>
         ) : (
-          "Completed"
+          filter.completed
         )}
         {completedNotes === 0 ? null : toFiltered === "completed" ? null : (
           <NoteCounter>{completedNotes}</NoteCounter>
