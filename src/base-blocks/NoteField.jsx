@@ -5,6 +5,8 @@ import NoteItem from "./NoteItem";
 import NoteEmpty from "../ui-blocks/NoteEmpty";
 
 import { selectFilteredNotes } from "./noteSlice";
+import { useNoteLang } from "../context/NoteLangContext";
+import { contentData } from "../data/content";
 
 const StyledNoteField = styled.ul`
   display: flex;
@@ -18,15 +20,19 @@ function NoteField() {
   const filteredNotes = useSelector(selectFilteredNotes);
   const toFiltered = useSelector((state) => state.note.filter);
 
+  const { lang } = useNoteLang();
+  const { empty } = lang === "en" ? contentData.en : contentData.ru;
+  const { allNotes, activeNotes, completedNotes } = empty;
+
   return (
     <StyledNoteField>
       {filteredNotes.length === 0 ? (
         toFiltered === "active" ? (
-          <NoteEmpty>Active notes list is empty</NoteEmpty>
+          <NoteEmpty>{activeNotes}</NoteEmpty>
         ) : toFiltered === "completed" ? (
-          <NoteEmpty>Completed notes list is empty</NoteEmpty>
+          <NoteEmpty>{completedNotes}</NoteEmpty>
         ) : (
-          <NoteEmpty>Note list is empty now</NoteEmpty>
+          <NoteEmpty>{allNotes}</NoteEmpty>
         )
       ) : (
         filteredNotes.map((note) => <NoteItem note={note} key={note.id} />)

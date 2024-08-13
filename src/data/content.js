@@ -19,6 +19,11 @@ export const contentData = {
       confirm: "Sure",
       cancel: "Nope",
     },
+    empty: {
+      allNotes: "Note list is empty now",
+      activeNotes: "Active notes list is empty",
+      completedNotes: "Completed notes list is empty",
+    },
   },
   ru: {
     appTitle: "Пиши и сохраняй заметки",
@@ -39,6 +44,11 @@ export const contentData = {
       message: "Вы уверены, что хотите удалить ",
       confirm: "Удалить",
       cancel: "Отмена",
+    },
+    empty: {
+      allNotes: "Сейчас список заметок пуст",
+      activeNotes: "Активных заметок нет",
+      completedNotes: "Выполненных заметок нет",
     },
   },
 };
