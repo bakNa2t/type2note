@@ -55,8 +55,10 @@ function NoteFooterMenu({ isMobileSize }) {
   const dispatch = useDispatch();
 
   const { lang } = useNoteLang();
-  const { descClear } =
-    lang === "en" ? contentData.en.confirmModal : contentData.ru.confirmModal;
+  // const { descClear } = lang === "en" ? contentData.en.confirmModal : contentData.ru.confirmModal;
+  const { amount, confirmModal } =
+    lang === "en" ? contentData.en : contentData.ru;
+  const { all, completed } = confirmModal.descClear;
 
   function handleClearAllNotes() {
     if (notes.length === 0) return;
@@ -73,7 +75,8 @@ function NoteFooterMenu({ isMobileSize }) {
   return (
     <StyledNoteFooterMenu>
       <NoteAmount>
-        <span>{activeNotes}</span>notes left
+        <span>{activeNotes}</span>
+        {amount}
       </NoteAmount>
       {isMobileSize && (
         <NoteFilter activeNotes={activeNotes} completedNotes={completedNotes} />
@@ -104,16 +107,13 @@ function NoteFooterMenu({ isMobileSize }) {
 
           <Modal.Window name="clear-completed-notes">
             <ConfirmDelete
-              desc={descClear.completed}
+              desc={completed}
               onConfirm={() => handleClearCompletedNotes()}
             />
           </Modal.Window>
 
           <Modal.Window name="clear-all-notes">
-            <ConfirmDelete
-              desc={descClear.all}
-              onConfirm={() => handleClearAllNotes()}
-            />
+            <ConfirmDelete desc={all} onConfirm={() => handleClearAllNotes()} />
           </Modal.Window>
         </NoteClearBtns>
       </Modal>
