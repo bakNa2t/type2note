@@ -57,8 +57,8 @@ function NoteItem({ note }) {
   const dispatch = useDispatch();
 
   const { lang } = useNoteLang();
-  const { confirmModal } = lang === "en" ? contentData.en : contentData.ru;
-  console.log(confirmModal);
+  const { desc } =
+    lang === "en" ? contentData.en.confirmModal : contentData.ru.confirmModal;
 
   function handleDeleteNote() {
     dispatch(deleteNote(id));
@@ -94,7 +94,7 @@ function NoteItem({ note }) {
         </Modal.Open>
 
         <Modal.Window name="delete">
-          <ConfirmDelete onConfirm={handleDeleteNote} desc="note" />
+          <ConfirmDelete onConfirm={handleDeleteNote} desc={desc} />
         </Modal.Window>
       </Modal>
     </StyledNoteItem>

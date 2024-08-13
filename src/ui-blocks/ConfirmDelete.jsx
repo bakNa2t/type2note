@@ -3,6 +3,9 @@ import PropTypes from "prop-types";
 
 import Button from "./Button";
 
+import { useNoteLang } from "../context/NoteLangContext";
+import { contentData } from "../data/content";
+
 const StyledConfirmDelete = styled.div`
   width: 40rem;
   display: flex;
@@ -40,16 +43,24 @@ function ConfirmDelete({ onConfirm, onCloseModal, desc }) {
     desc: PropTypes.string,
   };
 
+  const { lang } = useNoteLang();
+  const { modalHeading, message, confirm, cancel } =
+    lang === "en" ? contentData.en.confirmModal : contentData.ru.confirmModal;
+
   return (
     <StyledConfirmDelete>
-      <ConfirmHeading as={"h3"}>Delete {desc}</ConfirmHeading>
-      <p>Are you sure you want to delete {desc}?</p>
+      <ConfirmHeading as={"h3"}>
+        {modalHeading} {desc}
+      </ConfirmHeading>
+      <p>
+        {message} {desc}?
+      </p>
       <div>
         <Button size="md" color="theme" onClick={onCloseModal}>
-          Nope
+          {cancel}
         </Button>
         <Button size="md" color="theme" onClick={onConfirm}>
-          Sure
+          {confirm}
         </Button>
       </div>
     </StyledConfirmDelete>
