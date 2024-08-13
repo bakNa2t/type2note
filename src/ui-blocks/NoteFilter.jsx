@@ -10,7 +10,7 @@ import {
   filterCompleted,
 } from "../base-blocks/noteSlice";
 import { useNoteLang } from "../context/NoteLangContext";
-import { content } from "../data/content";
+import { contentData } from "../data/content";
 
 const StyledNoteFilter = styled.div`
   display: flex;
@@ -52,7 +52,7 @@ function NoteFilter({ activeNotes, completedNotes }) {
   const dispatch = useDispatch();
   const toFiltered = useSelector((state) => state.note.filter);
   const { lang } = useNoteLang();
-  const { filter } = lang === "en" ? content.en : content.ru;
+  const { filter } = lang === "en" ? contentData.en : contentData.ru;
 
   function handleFilterAll() {
     dispatch(filterAll());

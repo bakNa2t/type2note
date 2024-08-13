@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { useNoteLang } from "../context/NoteLangContext";
-import { content } from "../data/content";
+import { contentData } from "../data/content";
 
 const StyledHeading = styled.div`
   text-align: center;
@@ -13,7 +13,7 @@ const StyledHeading = styled.div`
 
 function Heading() {
   const { lang } = useNoteLang();
-  const { appTitle } = lang === "en" ? content.en : content.ru;
+  const { appTitle } = lang === "en" ? contentData.en : contentData.ru;
 
   return <StyledHeading as={"h2"}>{appTitle}</StyledHeading>;
 }

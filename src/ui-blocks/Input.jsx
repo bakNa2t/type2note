@@ -2,7 +2,7 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 
 import { useNoteLang } from "../context/NoteLangContext";
-import { content } from "../data/content";
+import { contentData } from "../data/content";
 
 const StyledInput = styled.input`
   width: 100%;
@@ -32,7 +32,7 @@ function Input({ value, onChange }) {
   };
 
   const { lang } = useNoteLang();
-  const { placeholder } = lang === "en" ? content.en : content.ru;
+  const { placeholder } = lang === "en" ? contentData.en : contentData.ru;
 
   return (
     <StyledInput

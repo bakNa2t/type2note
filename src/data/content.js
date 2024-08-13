@@ -1,4 +1,4 @@
-export const content = {
+export const contentData = {
   en: {
     appTitle: "Get started to store notes",
     placeholder: "Add new note...",

@@ -9,6 +9,8 @@ import ConfirmDelete from "../ui-blocks/ConfirmDelete";
 import CheckboxCustom from "../ui-blocks/CheckboxCustom";
 
 import { crossNote, deleteNote } from "./noteSlice";
+import { useNoteLang } from "../context/NoteLangContext";
+import { contentData } from "../data/content";
 
 const StyledNoteItem = styled.li`
   display: flex;
@@ -53,6 +55,10 @@ function NoteItem({ note }) {
 
   const { content, id, completed, time } = note;
   const dispatch = useDispatch();
+
+  const { lang } = useNoteLang();
+  const { confirmModal } = lang === "en" ? contentData.en : contentData.ru;
+  console.log(confirmModal);
 
   function handleDeleteNote() {
     dispatch(deleteNote(id));
