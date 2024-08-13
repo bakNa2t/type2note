@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
-import Heading from "./Heading";
 import Button from "./Button";
 
 const StyledConfirmDelete = styled.div`
@@ -26,6 +25,14 @@ const StyledConfirmDelete = styled.div`
   }
 `;
 
+const ConfirmHeading = styled.div`
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 2.6rem);
+  color: var(--color-spring-green-200);
+  text-shadow: 0 0 1rem var(--color-spring-green-400);
+  -webkit-text-stroke: 0.1rem var(--color-spring-green-800);
+`;
+
 function ConfirmDelete({ onConfirm, onCloseModal, desc }) {
   ConfirmDelete.propTypes = {
     onConfirm: PropTypes.func,
@@ -35,7 +42,7 @@ function ConfirmDelete({ onConfirm, onCloseModal, desc }) {
 
   return (
     <StyledConfirmDelete>
-      <Heading as={"h3"}>Delete {desc}</Heading>
+      <ConfirmHeading as={"h3"}>Delete {desc}</ConfirmHeading>
       <p>Are you sure you want to delete {desc}?</p>
       <div>
         <Button size="md" color="theme" onClick={onCloseModal}>

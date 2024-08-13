@@ -7,14 +7,26 @@ export const content = {
       active: "Active",
       completed: "Completed",
     },
+    confirmModal: {
+      desc: "note",
+      message: "Are you sure you want to delete this note?",
+      confirm: "Sure",
+      cancel: "Nope",
+    },
   },
   ru: {
-    appTitle: "Время начать хранить заметки",
+    appTitle: "Пиши и сохраняй заметки",
     placeholder: "Добавить новую заметку...",
     filter: {
       all: "Все",
       active: "Активные",
       completed: "Завершенные",
+    },
+    confirmModal: {
+      desc: "заметку",
+      message: "Вы уверены, что хотите удалить эту заметку?",
+      confirm: "Удалить",
+      cancel: "Отмена",
     },
   },
 };
