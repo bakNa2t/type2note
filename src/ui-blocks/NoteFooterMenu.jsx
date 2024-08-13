@@ -81,9 +81,9 @@ function NoteFooterMenu({ isMobileSize }) {
       {isMobileSize && (
         <NoteFilter activeNotes={activeNotes} completedNotes={completedNotes} />
       )}
-      <Modal>
-        <NoteClearBtns>
-          <Modal.Open opens="clear-completed-notes">
+      <NoteClearBtns>
+        <Modal>
+          <Modal.Open opens="completed">
             <Button
               size="md"
               filter="shadowSm"
@@ -94,7 +94,14 @@ function NoteFooterMenu({ isMobileSize }) {
             </Button>
           </Modal.Open>
 
-          <Modal.Open opens="clear-all-notes">
+          <Modal.Window name="completed">
+            <ConfirmDelete
+              desc={completed}
+              onConfirm={() => handleClearCompletedNotes()}
+            />
+          </Modal.Window>
+
+          <Modal.Open opens="all">
             <Button
               size="md"
               filter="shadowSm"
@@ -105,18 +112,11 @@ function NoteFooterMenu({ isMobileSize }) {
             </Button>
           </Modal.Open>
 
-          <Modal.Window name="clear-completed-notes">
-            <ConfirmDelete
-              desc={completed}
-              onConfirm={() => handleClearCompletedNotes()}
-            />
-          </Modal.Window>
-
-          <Modal.Window name="clear-all-notes">
+          <Modal.Window name="all">
             <ConfirmDelete desc={all} onConfirm={() => handleClearAllNotes()} />
           </Modal.Window>
-        </NoteClearBtns>
-      </Modal>
+        </Modal>
+      </NoteClearBtns>
     </StyledNoteFooterMenu>
   );
 }
