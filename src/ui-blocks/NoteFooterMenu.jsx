@@ -6,6 +6,8 @@ import PropTypes from "prop-types";
 import NoteFilter from "./NoteFilter";
 import Button from "./Button";
 import NoteClearBtns from "./NoteClearBtns";
+import Modal from "./Modal";
+import ConfirmDelete from "./ConfirmDelete";
 
 import {
   clearAllNotes,
@@ -13,8 +15,8 @@ import {
   selectFilteredNotes,
 } from "../base-blocks/noteSlice";
 import { useNoteCounter } from "../context/NoteCounterContext";
-import Modal from "./Modal";
-import ConfirmDelete from "./ConfirmDelete";
+import { useNoteLang } from "../context/NoteLangContext";
+import { contentData } from "../data/content";
 
 const StyledNoteFooterMenu = styled.div`
   display: flex;
@@ -51,6 +53,10 @@ function NoteFooterMenu({ isMobileSize }) {
   const { activeNotes, completedNotes } = useNoteCounter();
   const notes = useSelector(selectFilteredNotes);
   const dispatch = useDispatch();
+
+  const { lang } = useNoteLang();
+  const { descClear } =
+    lang === "en" ? contentData.en.confirmModal : contentData.ru.confirmModal;
 
   function handleClearAllNotes() {
     if (notes.length === 0) return;
@@ -98,14 +104,14 @@ function NoteFooterMenu({ isMobileSize }) {
 
           <Modal.Window name="clear-completed-notes">
             <ConfirmDelete
-              desc="completed notes"
+              desc={descClear.completed}
               onConfirm={() => handleClearCompletedNotes()}
             />
           </Modal.Window>
 
           <Modal.Window name="clear-all-notes">
             <ConfirmDelete
-              desc="all notes"
+              desc={descClear.all}
               onConfirm={() => handleClearAllNotes()}
             />
           </Modal.Window>

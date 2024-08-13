@@ -9,7 +9,11 @@ export const contentData = {
     },
     confirmModal: {
       desc: "note",
-      modalHeading: "Delete",
+      descClear: {
+        completed: "completed notes",
+        all: "all notes",
+      },
+      modalHeading: "Delete ",
       message: "Are you sure you want to delete ",
       confirm: "Sure",
       cancel: "Nope",
@@ -25,7 +29,11 @@ export const contentData = {
     },
     confirmModal: {
       desc: "заметку",
-      modalHeading: "Удалить",
+      descClear: {
+        completed: "выполненные заметки",
+        all: "все заметки",
+      },
+      modalHeading: "Удалить ",
       message: "Вы уверены, что хотите удалить ",
       confirm: "Удалить",
       cancel: "Отмена",

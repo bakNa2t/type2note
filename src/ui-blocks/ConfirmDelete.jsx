@@ -50,7 +50,8 @@ function ConfirmDelete({ onConfirm, onCloseModal, desc }) {
   return (
     <StyledConfirmDelete>
       <ConfirmHeading as={"h3"}>
-        {modalHeading} {desc}
+        {modalHeading}
+        {desc}
       </ConfirmHeading>
       <p>
         {message} {desc}?
