@@ -28,22 +28,26 @@ function NoteClearBtns({ notes, completedNotes }) {
   const dispatch = useDispatch();
 
   const { lang } = useNoteLang();
-  const { confirmModal, hoverDesc } =
-    lang === "en" ? contentData.en : contentData.ru;
-  const { all, completed } = confirmModal.descClear;
+  const {
+    confirmModal: { descClear },
+    hoverDesc,
+    toast: { success },
+  } = lang === "en" ? contentData.en : contentData.ru;
+  const { all, completed } = descClear;
+  const { deleteAllMsg, deleteCompletedMsg } = success;
 
   function handleClearAllNotes() {
     if (notes.length === 0) return;
 
     dispatch(clearAllNotes());
-    toast.success("All notes deleted");
+    toast.success(deleteAllMsg);
   }
 
   function handleClearCompletedNotes() {
     if (completedNotes === 0) return;
 
     dispatch(clearCompletedNotes());
-    toast.success("All completed notes deleted");
+    toast.success(deleteCompletedMsg);
   }
 
   return (

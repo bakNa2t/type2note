@@ -34,6 +34,8 @@ export const contentData = {
         editMsg: "Note edited",
         deleteMsg: "Note deleted",
         completedMsg: "Note completed",
+        deletelAllMsg: "All notes deleted",
+        deleteCompletedMsg: "All completed notes deleted",
       },
       error: {
         emptyMsg: "Please add note",
@@ -75,6 +77,8 @@ export const contentData = {
         editMsg: "Заметка отредактирована",
         deleteMsg: "Заметка удалена",
         completedMsg: "Заметка выполнена",
+        deleteAllMsg: "Все заметки удалены",
+        deleteCompletedMsg: "Все выполненные заметки удалены",
       },
       error: {
         emptyMsg: "Введите заметку",
