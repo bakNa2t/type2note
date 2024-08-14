@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { CloseOutlined /*, EditOutlined*/ } from "@ant-design/icons";
+import toast from "react-hot-toast";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
@@ -62,6 +63,7 @@ function NoteItem({ note }) {
 
   function handleDeleteNote() {
     dispatch(deleteNote(id));
+    toast.success("Note deleted");
   }
 
   function handleCrossNote() {

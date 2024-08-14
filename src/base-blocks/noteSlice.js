@@ -22,7 +22,6 @@ const noteSlice = createSlice({
       reducer(state, action) {
         state.notes = [action.payload, ...state.notes];
         localStorage.setItem("notes", JSON.stringify(state.notes));
-        toast.success("Note added");
       },
     },
     editNote(state, action) {
@@ -47,7 +46,6 @@ const noteSlice = createSlice({
     deleteNote: (state, action) => {
       state.notes = state.notes.filter((note) => note.id !== action.payload);
       localStorage.setItem("notes", JSON.stringify(state.notes));
-      toast.success("Note deleted");
     },
     crossNote: (state, action) => {
       const currentNote = state.notes.find(

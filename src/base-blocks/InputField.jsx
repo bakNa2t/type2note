@@ -41,6 +41,7 @@ function InputField() {
     }
 
     dispatch(addNote(createNote));
+    toast.success("Note added");
     setCreateNote("");
   }
 
