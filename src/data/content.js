@@ -34,7 +34,7 @@ export const contentData = {
         editMsg: "Note edited",
         deleteMsg: "Note deleted",
         completedMsg: "Note completed",
-        deletelAllMsg: "All notes deleted",
+        deleteAllMsg: "All notes deleted",
         deleteCompletedMsg: "All completed notes deleted",
       },
       error: {
