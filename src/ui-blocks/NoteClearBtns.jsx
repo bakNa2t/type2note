@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
-import styled from "styled-components";
 import { ClearOutlined, DeleteOutlined } from "@ant-design/icons";
+import styled from "styled-components";
+import toast from "react-hot-toast";
 import PropTypes from "prop-types";
 
 import Modal from "./Modal";
@@ -35,12 +36,14 @@ function NoteClearBtns({ notes, completedNotes }) {
     if (notes.length === 0) return;
 
     dispatch(clearAllNotes());
+    toast.success("All notes deleted");
   }
 
   function handleClearCompletedNotes() {
     if (completedNotes === 0) return;
 
     dispatch(clearCompletedNotes());
+    toast.success("All completed notes deleted");
   }
 
   return (

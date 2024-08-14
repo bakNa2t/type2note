@@ -60,12 +60,10 @@ const noteSlice = createSlice({
       state.notes = [];
       // localStorage.setItem("notes", JSON.stringify(state.notes));
       localStorage.removeItem("notes");
-      toast.success("All notes deleted");
     },
     clearCompletedNotes: (state) => {
       state.notes = state.notes.filter((note) => !note.completed);
       localStorage.setItem("notes", JSON.stringify(state.notes));
-      toast.success("All completed notes deleted");
     },
     filterAll: (state) => {
       state.filter = "all";
