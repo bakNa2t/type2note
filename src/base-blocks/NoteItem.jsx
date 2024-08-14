@@ -58,12 +58,14 @@ function NoteItem({ note }) {
   const dispatch = useDispatch();
 
   const { lang } = useNoteLang();
-  const { desc } =
-    lang === "en" ? contentData.en.confirmModal : contentData.ru.confirmModal;
+  const {
+    confirmModal: { desc },
+    toast: { success },
+  } = lang === "en" ? contentData.en : contentData.ru;
 
   function handleDeleteNote() {
     dispatch(deleteNote(id));
-    toast.success("Note deleted");
+    toast.success(success.deleteMsg);
   }
 
   function handleCrossNote() {

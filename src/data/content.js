@@ -28,6 +28,17 @@ export const contentData = {
       all: "Clear all",
       completed: "Clear completed",
     },
+    toast: {
+      success: {
+        addMsg: "Note added",
+        editMsg: "Note edited",
+        deleteMsg: "Note deleted",
+        completedMsg: "Note completed",
+      },
+      error: {
+        emptyMsg: "Please add note",
+      },
+    },
   },
   ru: {
     appTitle: "Пиши и сохраняй заметки",
@@ -57,6 +68,17 @@ export const contentData = {
     hoverDesc: {
       all: "Удалить все",
       completed: "Удалить выполненные",
+    },
+    toast: {
+      success: {
+        addMsg: "Заметка добавлена",
+        editMsg: "Заметка отредактирована",
+        deleteMsg: "Заметка удалена",
+        completedMsg: "Заметка выполнена",
+      },
+      error: {
+        emptyMsg: "Введите заметку",
+      },
     },
   },
 };

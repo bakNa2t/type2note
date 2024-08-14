@@ -10,6 +10,8 @@ import IconWrapper from "../ui-blocks/IconWrapper";
 import InputWrapper from "../ui-blocks/InputWrapper";
 
 import { addNote } from "./noteSlice";
+import { useNoteLang } from "../context/NoteLangContext";
+import { contentData } from "../data/content";
 
 const StyledInputField = styled.form`
   display: flex;
@@ -32,16 +34,20 @@ function InputField() {
   const [createNote, setCreateNote] = useState("");
   const dispatch = useDispatch();
 
+  const { lang } = useNoteLang();
+  const { success, error } =
+    lang === "en" ? contentData.en.toast : contentData.ru.toast;
+
   function handleInput(e) {
     e.preventDefault();
 
     if (!createNote || createNote.trim() === "") {
-      toast.error("Please enter a note");
+      toast.error(error.emptyMsg);
       return;
     }
 
     dispatch(addNote(createNote));
-    toast.success("Note added");
+    toast.success(success.addMsg);
     setCreateNote("");
   }
 
