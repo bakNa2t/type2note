@@ -60,7 +60,7 @@ function ConfirmDelete({ onConfirm, onCloseModal, desc }) {
         <Button size="md" color="theme" onClick={onCloseModal}>
           {cancel}
         </Button>
-        <Button size="md" color="theme" onClick={onConfirm}>
+        <Button size="md" color="theme" onClick={() => onConfirm(onCloseModal)}>
           {confirm}
         </Button>
       </div>

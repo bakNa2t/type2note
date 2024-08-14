@@ -79,7 +79,13 @@ function NoteClearBtns({ notes, completedNotes }) {
         </Modal.Window>
 
         <Modal.Window name="all">
-          <ConfirmDelete desc={all} onConfirm={() => handleClearAllNotes()} />
+          <ConfirmDelete
+            desc={all}
+            onConfirm={(closeModal) => {
+              handleClearAllNotes();
+              closeModal();
+            }}
+          />
         </Modal.Window>
       </StyledNoteClearBtns>
     </Modal>
