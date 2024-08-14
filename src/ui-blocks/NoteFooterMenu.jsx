@@ -56,18 +56,17 @@ function NoteFooterMenu({ isMobileSize }) {
 
   const { lang } = useNoteLang();
   // const { descClear } = lang === "en" ? contentData.en.confirmModal : contentData.ru.confirmModal;
-  const { amount, confirmModal } =
+  const { amount, confirmModal, hoverDesc } =
     lang === "en" ? contentData.en : contentData.ru;
   const { all, completed } = confirmModal.descClear;
 
   function handleClearAllNotes() {
     if (notes.length === 0) return;
-
     dispatch(clearAllNotes());
   }
 
   function handleClearCompletedNotes() {
-    if (notes.length === 0) return;
+    if (completedNotes === 0) return;
 
     dispatch(clearCompletedNotes());
   }
@@ -87,10 +86,21 @@ function NoteFooterMenu({ isMobileSize }) {
             <Button
               size="md"
               filter="shadowSm"
-              cleardesc={{ content: "Clear completed" }}
+              cleardesc={{ content: hoverDesc.completed }}
               disabled={notes.length === 0 || completedNotes === 0}
             >
               <ClearOutlined />
+            </Button>
+          </Modal.Open>
+
+          <Modal.Open opens="all">
+            <Button
+              size="md"
+              filter="shadowSm"
+              cleardesc={{ content: hoverDesc.all }}
+              disabled={notes.length === 0}
+            >
+              <DeleteOutlined />
             </Button>
           </Modal.Open>
 
@@ -100,17 +110,6 @@ function NoteFooterMenu({ isMobileSize }) {
               onConfirm={() => handleClearCompletedNotes()}
             />
           </Modal.Window>
-
-          <Modal.Open opens="all">
-            <Button
-              size="md"
-              filter="shadowSm"
-              cleardesc={{ content: "Clear all" }}
-              disabled={notes.length === 0}
-            >
-              <DeleteOutlined />
-            </Button>
-          </Modal.Open>
 
           <Modal.Window name="all">
             <ConfirmDelete desc={all} onConfirm={() => handleClearAllNotes()} />

@@ -24,6 +24,10 @@ export const contentData = {
       activeNotes: "Active notes list is empty",
       completedNotes: "Completed notes list is empty",
     },
+    hoverDesc: {
+      all: "Clear all",
+      completed: "Clear completed",
+    },
   },
   ru: {
     appTitle: "Пиши и сохраняй заметки",
@@ -49,6 +53,10 @@ export const contentData = {
       allNotes: "Сейчас список заметок пуст",
       activeNotes: "Активных заметок нет",
       completedNotes: "Выполненных заметок нет",
+    },
+    hoverDesc: {
+      all: "Удалить все",
+      completed: "Удалить выполненные",
     },
   },
 };
