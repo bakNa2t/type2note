@@ -1,19 +1,11 @@
-import { useDispatch, useSelector } from "react-redux";
-import { ClearOutlined, DeleteOutlined } from "@ant-design/icons";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
 import NoteFilter from "./NoteFilter";
-import Button from "./Button";
 import NoteClearBtns from "./NoteClearBtns";
-import Modal from "./Modal";
-import ConfirmDelete from "./ConfirmDelete";
 
-import {
-  clearAllNotes,
-  clearCompletedNotes,
-  selectFilteredNotes,
-} from "../base-blocks/noteSlice";
+import { selectFilteredNotes } from "../base-blocks/noteSlice";
 import { useNoteCounter } from "../context/NoteCounterContext";
 import { useNoteLang } from "../context/NoteLangContext";
 import { contentData } from "../data/content";
@@ -52,24 +44,9 @@ function NoteFooterMenu({ isMobileSize }) {
 
   const { activeNotes, completedNotes } = useNoteCounter();
   const notes = useSelector(selectFilteredNotes);
-  const dispatch = useDispatch();
 
   const { lang } = useNoteLang();
-  // const { descClear } = lang === "en" ? contentData.en.confirmModal : contentData.ru.confirmModal;
-  const { amount, confirmModal, hoverDesc } =
-    lang === "en" ? contentData.en : contentData.ru;
-  const { all, completed } = confirmModal.descClear;
-
-  function handleClearAllNotes() {
-    if (notes.length === 0) return;
-    dispatch(clearAllNotes());
-  }
-
-  function handleClearCompletedNotes() {
-    if (completedNotes === 0) return;
-
-    dispatch(clearCompletedNotes());
-  }
+  const { amount } = lang === "en" ? contentData.en : contentData.ru;
 
   return (
     <StyledNoteFooterMenu>
@@ -77,45 +54,12 @@ function NoteFooterMenu({ isMobileSize }) {
         <span>{activeNotes}</span>
         {amount}
       </NoteAmount>
+
       {isMobileSize && (
         <NoteFilter activeNotes={activeNotes} completedNotes={completedNotes} />
       )}
-      <NoteClearBtns>
-        <Modal>
-          <Modal.Open opens="completed">
-            <Button
-              size="md"
-              filter="shadowSm"
-              cleardesc={{ content: hoverDesc.completed }}
-              disabled={notes.length === 0 || completedNotes === 0}
-            >
-              <ClearOutlined />
-            </Button>
-          </Modal.Open>
 
-          <Modal.Open opens="all">
-            <Button
-              size="md"
-              filter="shadowSm"
-              cleardesc={{ content: hoverDesc.all }}
-              disabled={notes.length === 0}
-            >
-              <DeleteOutlined />
-            </Button>
-          </Modal.Open>
-
-          <Modal.Window name="completed">
-            <ConfirmDelete
-              desc={completed}
-              onConfirm={() => handleClearCompletedNotes()}
-            />
-          </Modal.Window>
-
-          <Modal.Window name="all">
-            <ConfirmDelete desc={all} onConfirm={() => handleClearAllNotes()} />
-          </Modal.Window>
-        </Modal>
-      </NoteClearBtns>
+      <NoteClearBtns notes={notes} completedNotes={completedNotes} />
     </StyledNoteFooterMenu>
   );
 }

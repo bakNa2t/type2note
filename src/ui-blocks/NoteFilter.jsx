@@ -25,7 +25,8 @@ const StyledNoteFilter = styled.div`
 
 const FilterActive = styled.p`
   color: var(--color-spring-green-200);
-  text-shadow: 0 0 1rem var(--color-spring-green-100);
+  text-shadow: 0 0 1rem var(--color-ebony-200),
+    0 0 1.2rem var(--color-spring-green-400);
   font-weight: 500;
 `;
 
