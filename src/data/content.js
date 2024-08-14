@@ -2,7 +2,7 @@ export const contentData = {
   en: {
     appTitle: "Get started to store notes",
     placeholder: "Add new note...",
-    amount: " notes left",
+    amount: "notes left",
     filter: {
       all: "All",
       active: "Active",
@@ -32,7 +32,7 @@ export const contentData = {
   ru: {
     appTitle: "Пиши и сохраняй заметки",
     placeholder: "Добавить новую заметку...",
-    amount: " невыполненных",
+    amount: "невыполненных",
     filter: {
       all: "Все",
       active: "Активные",
