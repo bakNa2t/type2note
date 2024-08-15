@@ -58,10 +58,20 @@ function ConfirmDelete({ onConfirm, onCloseModal, desc }) {
         {message} {desc}?
       </p>
       <div>
-        <Button size="xl" color="theme" onClick={onCloseModal}>
+        <Button
+          size="xxl"
+          color="theme"
+          filter="shadowSm"
+          onClick={onCloseModal}
+        >
           <CloseSquareOutlined />
         </Button>
-        <Button size="xl" color="theme" onClick={() => onConfirm(onCloseModal)}>
+        <Button
+          size="xxl"
+          color="theme"
+          filter="shadowSm"
+          onClick={() => onConfirm(onCloseModal)}
+        >
           <CheckSquareOutlined />
         </Button>
       </div>

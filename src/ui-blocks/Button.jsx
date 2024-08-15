@@ -22,6 +22,10 @@ const sizes = {
     padding: 1rem;
     /* filter: drop-shadow(0 0 1rem var(--color-spring-green-700)); */
   `,
+  xxl: css`
+    font-size: 3.2rem;
+    padding: 0.8rem;
+  `,
 };
 
 const colors = {
