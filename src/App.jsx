@@ -3,7 +3,7 @@ import { Toaster } from "react-hot-toast";
 import InputField from "./base-blocks/InputField";
 import Heading from "./ui-blocks/Heading";
 import Header from "./ui-blocks/Header";
-import AppLayout from "./ui-blocks/AppLayout";
+import NoteLayout from "./ui-blocks/NoteLayout";
 import NoteField from "./base-blocks/NoteField";
 import NoteFooterMenu from "./ui-blocks/NoteFooterMenu";
 import NoteFilterWrapper from "./ui-blocks/NoteFilterWrapper";
@@ -23,13 +23,13 @@ function App() {
         <NoteLangProvider>
           <GlobalStyles />
           <Header />
-          <AppLayout>
+          <NoteLayout>
             <Heading />
             <InputField />
             <NoteField />
             <NoteFooterMenu isMobileSize={isMobileSize} />
             {!isMobileSize && <NoteFilterWrapper />}
-          </AppLayout>
+          </NoteLayout>
           <Toaster
             position="top-center"
             gutter={12}
