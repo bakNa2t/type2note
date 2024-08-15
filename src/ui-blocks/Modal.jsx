@@ -33,21 +33,22 @@ const Overlay = styled.div`
 const Button = styled.button`
   background: none;
   border: none;
-  padding: 0.4rem;
   border-radius: 0.4rem;
   transform: translateX(0.8rem);
   transition: all 0.2s;
   position: absolute;
-  top: 1.2rem;
-  right: 1.9rem;
+  top: 1rem;
+  right: 1.6rem;
 
   &:hover {
     background-color: var(--color-ebony-400);
+    filter: drop-shadow(0 0 0.4rem var(--color-spring-green-700));
   }
 
   & svg {
     width: 2.4rem;
     height: 2.4rem;
+    padding: 0 0.4rem;
     /* color: var(--color-spring-green-200); */
     fill: var(--color-spring-green-800);
     stroke: var(--color-spring-green-200);
