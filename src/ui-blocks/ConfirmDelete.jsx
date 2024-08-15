@@ -1,3 +1,4 @@
+import { CheckSquareOutlined, CloseSquareOutlined } from "@ant-design/icons";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
@@ -44,12 +45,12 @@ function ConfirmDelete({ onConfirm, onCloseModal, desc }) {
   };
 
   const { lang } = useNoteLang();
-  const { modalHeading, message, confirm, cancel } =
+  const { modalHeading, message } =
     lang === "en" ? contentData.en.confirmModal : contentData.ru.confirmModal;
 
   return (
     <StyledConfirmDelete>
-      <ConfirmHeading as={"h3"}>
+      <ConfirmHeading as={"h4"}>
         {modalHeading}
         {desc}
       </ConfirmHeading>
@@ -57,11 +58,11 @@ function ConfirmDelete({ onConfirm, onCloseModal, desc }) {
         {message} {desc}?
       </p>
       <div>
-        <Button size="md" color="theme" onClick={onCloseModal}>
-          {cancel}
+        <Button size="xl" color="theme" onClick={onCloseModal}>
+          <CloseSquareOutlined />
         </Button>
-        <Button size="md" color="theme" onClick={() => onConfirm(onCloseModal)}>
-          {confirm}
+        <Button size="xl" color="theme" onClick={() => onConfirm(onCloseModal)}>
+          <CheckSquareOutlined />
         </Button>
       </div>
     </StyledConfirmDelete>
