@@ -2,8 +2,8 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 
 const StyledNoteLayout = styled.div`
-  max-width: 60rem;
-  margin: auto;
+  flex-grow: 1;
+  flex-shrink: 0;
   padding: 1rem;
 
   @media screen and (max-width: 500px) {
@@ -11,12 +11,21 @@ const StyledNoteLayout = styled.div`
   }
 `;
 
+const Wrapper = styled.div`
+  margin: auto;
+  max-width: 60rem;
+`;
+
 function NoteLayout({ children }) {
   NoteLayout.propTypes = {
     children: PropTypes.node,
   };
 
-  return <StyledNoteLayout>{children}</StyledNoteLayout>;
+  return (
+    <StyledNoteLayout>
+      <Wrapper>{children}</Wrapper>
+    </StyledNoteLayout>
+  );
 }
 
 export default NoteLayout;
