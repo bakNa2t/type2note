@@ -24,12 +24,6 @@ const noteSlice = createSlice({
         localStorage.setItem("notes", JSON.stringify(state.notes));
       },
     },
-    checkDuplicate: (state, action) => {
-      if (state.notes.find((note) => note.content === action.payload)) {
-        toast.error("Note already exists");
-        return;
-      }
-    },
     markEditNote: (state, action) => {
       const index = state.notes.findIndex((note) => note.id === action.payload);
       if (index !== -1) {

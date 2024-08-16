@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { EnterOutlined } from "@ant-design/icons";
 import toast from "react-hot-toast";
 import styled from "styled-components";
@@ -9,7 +9,7 @@ import Input from "../ui-blocks/Input";
 import IconWrapper from "../ui-blocks/IconWrapper";
 import InputWrapper from "../ui-blocks/InputWrapper";
 
-import { addNote } from "./noteSlice";
+import { addNote, selectFilteredNotes } from "./noteSlice";
 import { useNoteLang } from "../context/NoteLangContext";
 import { contentData } from "../data/content";
 
@@ -33,6 +33,7 @@ const StyledInputField = styled.form`
 function InputField() {
   const [createNote, setCreateNote] = useState("");
   const dispatch = useDispatch();
+  const notes = useSelector(selectFilteredNotes);
 
   const { lang } = useNoteLang();
   const { success, error } =
@@ -43,6 +44,11 @@ function InputField() {
 
     if (!createNote || createNote.trim() === "") {
       toast.error(error.emptyMsg);
+      return;
+    }
+
+    if (notes.some((note) => note.content === createNote)) {
+      toast.error("Note already exists");
       return;
     }
 
