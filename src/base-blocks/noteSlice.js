@@ -102,6 +102,7 @@ export function selectFilteredNotes(state) {
 
 export const {
   addNote,
+  markEditNote,
   deleteNote,
   crossNote,
   clearAllNotes,

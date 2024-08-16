@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { CloseOutlined /*, EditOutlined*/ } from "@ant-design/icons";
+import { CloseOutlined, EditOutlined } from "@ant-design/icons";
 import toast from "react-hot-toast";
 import styled from "styled-components";
 import PropTypes from "prop-types";
@@ -9,7 +9,7 @@ import Modal from "../ui-blocks/Modal";
 import ConfirmDelete from "../ui-blocks/ConfirmDelete";
 import CheckboxCustom from "../ui-blocks/CheckboxCustom";
 
-import { crossNote, deleteNote } from "./noteSlice";
+import { crossNote, deleteNote, markEditNote } from "./noteSlice";
 import { useNoteLang } from "../context/NoteLangContext";
 import { contentData } from "../data/content";
 
@@ -72,6 +72,10 @@ function NoteItem({ note }) {
     dispatch(crossNote(id));
   }
 
+  function handleMarkEditNote() {
+    dispatch(markEditNote(id));
+  }
+
   return (
     <StyledNoteItem>
       <CheckboxCustom onClick={handleCrossNote} completed={completed} />
@@ -86,9 +90,10 @@ function NoteItem({ note }) {
           <NoteText>{content}</NoteText>
         </NoteTextWrapper>
       )}
-      {/*<Button size="sm">
+
+      <Button size="sm" onClick={() => handleMarkEditNote()}>
         <EditOutlined />
-        </Button> */}
+      </Button>
 
       <Modal>
         <Modal.Open opens="delete">
