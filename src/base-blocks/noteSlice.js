@@ -30,6 +30,12 @@ const noteSlice = createSlice({
         return;
       }
     },
+    markEditNote: (state, action) => {
+      const index = state.notes.findIndex((note) => note.id === action.payload);
+      if (index !== -1) {
+        state.editingNotes = state.notes[index];
+      }
+    },
     editNote: (state, action) => {
       const noteIndex = state.notes.findIndex(
         (note) => note.id === action.payload.id
