@@ -48,7 +48,7 @@ function InputField() {
     }
 
     if (notes.some((note) => note.content === createNote)) {
-      toast.error("Note already exists");
+      toast.error(error.duplicateMsg);
       return;
     }
 

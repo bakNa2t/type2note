@@ -39,6 +39,7 @@ export const contentData = {
       },
       error: {
         emptyMsg: "Please add note",
+        duplicateMsg: "Note already exists",
       },
     },
   },
@@ -82,6 +83,7 @@ export const contentData = {
       },
       error: {
         emptyMsg: "Введите заметку",
+        duplicateMsg: "Заметка уже существует",
       },
     },
   },
