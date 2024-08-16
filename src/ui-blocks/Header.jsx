@@ -10,11 +10,9 @@ const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2rem;
-
   padding: 2rem 5rem;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 500px) {
     padding: 2rem;
   }
 `;

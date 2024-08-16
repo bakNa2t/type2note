@@ -21,10 +21,17 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1rem;
+
+  & > span {
+    font-size: 1.6rem;
+    @media screen and (max-width: 500px) {
+      font-size: 1rem;
+    }
+  }
 `;
 
 const StyledLink = styled.a`
-  color: var(--color-spring-green-300);
+  color: var(--color-spring-green-400);
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
@@ -38,7 +45,7 @@ function Footer() {
   return (
     <StyledFooter>
       <Wrapper>
-        &copy; Copyright {new Date().getFullYear()}. Design by{" "}
+        <span>&copy;</span> Copyright {new Date().getFullYear()}. Design by{" "}
         <StyledLink
           href="https://github.com/bakna2t/"
           target="_blank"
