@@ -94,6 +94,18 @@ export function selectFilteredNotes(state) {
   }
 }
 
+export function selectEditingFilteredNotes(state) {
+  const { filter, editingNotes } = state.note;
+  switch (filter) {
+    case "active":
+      return editingNotes.filter((editNotes) => !editNotes.completed);
+    case "completed":
+      return editingNotes.filter((editNotes) => editNotes.completed);
+    default:
+      return editingNotes;
+  }
+}
+
 export const {
   addNote,
   markEditNote,

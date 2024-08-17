@@ -91,7 +91,7 @@ function NoteItem({ note }) {
         </NoteTextWrapper>
       )}
 
-      <Button size="sm" onClick={() => handleMarkEditNote()}>
+      <Button size="sm" onClick={() => handleMarkEditNote()} disabled={true}>
         <EditOutlined />
       </Button>
 
