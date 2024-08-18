@@ -42,6 +42,11 @@ const StyledLink = styled.a`
   }
 `;
 
+const StyledSpan = styled.span`
+  transform: scale(0.8);
+  filter: drop-shadow(0 0 0.4rem var(--color-ebony-800));
+`;
+
 function Footer() {
   const [emoji, setEmoji] = useState();
 
@@ -58,7 +63,7 @@ function Footer() {
       }
       setEmoji(emojiStack.at(counter));
       counter++;
-    }, 3000);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, []);
@@ -67,7 +72,7 @@ function Footer() {
     <StyledFooter>
       <Wrapper>
         <span>&copy;</span> Copyright {new Date().getFullYear()}. Design with{" "}
-        {emoji} by{" "}
+        <StyledSpan>{emoji}</StyledSpan> by{" "}
         <StyledLink
           href="https://github.com/bakna2t/"
           target="_blank"
