@@ -66,7 +66,8 @@ function Footer() {
   return (
     <StyledFooter>
       <Wrapper>
-        <span>&copy;</span> Copyright {new Date().getFullYear()}. Design by{" "}
+        <span>&copy;</span> Copyright {new Date().getFullYear()}. Design with{" "}
+        {emoji} by{" "}
         <StyledLink
           href="https://github.com/bakna2t/"
           target="_blank"
