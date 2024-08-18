@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const StyledFooter = styled.footer`
@@ -42,6 +43,26 @@ const StyledLink = styled.a`
 `;
 
 function Footer() {
+  const [emoji, setEmoji] = useState();
+
+  useEffect(function () {
+    const emojiStack = ["💻", "💚", "🐱‍👤", "💡", "⏳"];
+    let counter = 0;
+
+    setEmoji(emojiStack.at(counter));
+    counter++;
+
+    const interval = setInterval(function () {
+      if (counter >= emojiStack.length) {
+        counter = 0;
+      }
+      setEmoji(emojiStack.at(counter));
+      counter++;
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <StyledFooter>
       <Wrapper>
