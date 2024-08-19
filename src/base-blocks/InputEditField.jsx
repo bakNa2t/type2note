@@ -11,6 +11,8 @@ import IconWrapper from "../ui-blocks/IconWrapper";
 import InputWrapper from "../ui-blocks/InputWrapper";
 
 import { editNote as editCurrentNote } from "./noteSlice";
+import { useNoteLang } from "../context/NoteLangContext";
+import { contentData } from "../data/content";
 
 const StyledInputEditField = styled.form`
   display: flex;
@@ -44,15 +46,20 @@ function InputEditField({ note, onCloseModal }) {
   const [editNote, setEditNote] = useState(note.content);
   const dispatch = useDispatch();
 
+  const { lang } = useNoteLang();
+  const { success, error } =
+    lang === "en" ? contentData.en.toast : contentData.ru.toast;
+
   function handleEditInput(e) {
     e.preventDefault();
 
     if (!editNote || editNote.trim() === "") {
-      toast.error("Please enter a note");
+      toast.error(error.emptyMsg);
       return;
     }
 
     dispatch(editCurrentNote({ ...note, content: editNote }));
+    toast.success(success.editMsg);
     setEditNote("");
 
     onCloseModal();

@@ -1,6 +1,5 @@
 import { createSlice, nanoid } from "@reduxjs/toolkit";
 import { format } from "date-fns";
-import toast from "react-hot-toast";
 
 import initialState from "./initial-state/initialState";
 
@@ -39,7 +38,6 @@ const noteSlice = createSlice({
         state.notes[noteIndex].content = action.payload.content;
 
         localStorage.setItem("notes", JSON.stringify(state.notes));
-        toast.success("Note edited");
       }
 
       state.editingNotes = {};
