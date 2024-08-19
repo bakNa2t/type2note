@@ -21,7 +21,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 0.6rem;
 
   & > span {
     font-size: 1.6rem;
@@ -43,6 +43,7 @@ const StyledLink = styled.a`
 `;
 
 const StyledSpan = styled.span`
+  width: 2rem;
   transform: scale(0.8);
   filter: drop-shadow(0 0 0.4rem var(--color-ebony-800));
 `;
@@ -71,7 +72,7 @@ function Footer() {
   return (
     <StyledFooter>
       <Wrapper>
-        <span>&copy;</span> Copyright {new Date().getFullYear()}. Design with{" "}
+        <span>&copy;</span>Copyright {new Date().getFullYear()}. Design with{" "}
         <StyledSpan>{emoji}</StyledSpan> by{" "}
         <StyledLink
           href="https://github.com/bakna2t/"
