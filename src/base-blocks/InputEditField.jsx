@@ -27,9 +27,10 @@ const StyledInputEditField = styled.form`
   }
 `;
 
-function InputEditField({ note }) {
+function InputEditField({ note, onCloseModal }) {
   InputEditField.propTypes = {
     note: PropTypes.object,
+    onCloseModal: PropTypes.func,
   };
 
   const [editNote, setEditNote] = useState(note.content);
@@ -45,6 +46,8 @@ function InputEditField({ note }) {
 
     dispatch(editCurrentNote({ ...note, content: editNote }));
     setEditNote("");
+
+    onCloseModal();
   }
 
   return (
