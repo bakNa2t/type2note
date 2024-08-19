@@ -6,6 +6,7 @@ import Button from "./Button";
 
 import { useNoteLang } from "../context/NoteLangContext";
 import { contentData } from "../data/content";
+import { useEffect } from "react";
 
 const StyledConfirmDelete = styled.div`
   width: 40rem;
@@ -47,6 +48,18 @@ function ConfirmDelete({ onConfirm, onCloseModal, desc }) {
   const { lang } = useNoteLang();
   const { modalHeading, message } =
     lang === "en" ? contentData.en.confirmModal : contentData.ru.confirmModal;
+
+  useEffect(function () {
+    window.addEventListener("keydown", handleKeyUp);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyUp);
+    };
+  });
+
+  function handleKeyUp(e) {
+    if (e.key === "Escape") onCloseModal();
+  }
 
   return (
     <StyledConfirmDelete>
