@@ -8,6 +8,7 @@ import Button from "../ui-blocks/Button";
 import Modal from "../ui-blocks/Modal";
 import ConfirmDelete from "../ui-blocks/ConfirmDelete";
 import CheckboxCustom from "../ui-blocks/CheckboxCustom";
+import InputEditField from "./InputEditField";
 
 import { crossNote, deleteNote, markEditNote } from "./noteSlice";
 import { useNoteLang } from "../context/NoteLangContext";
@@ -91,11 +92,17 @@ function NoteItem({ note }) {
         </NoteTextWrapper>
       )}
 
-      <Button size="sm" onClick={() => handleMarkEditNote()} disabled={true}>
-        <EditOutlined />
-      </Button>
-
       <Modal>
+        <Modal.Open opens="edit">
+          <Button size="sm" onClick={() => handleMarkEditNote()}>
+            <EditOutlined />
+          </Button>
+        </Modal.Open>
+
+        <Modal.Window name="edit">
+          <InputEditField note={note} />
+        </Modal.Window>
+
         <Modal.Open opens="delete">
           <Button size="sm">
             <CloseOutlined />
