@@ -8,6 +8,7 @@ export const contentData = {
       active: "Active",
       completed: "Completed",
     },
+    editModal: "Update note",
     confirmModal: {
       desc: "note",
       descClear: {
@@ -52,6 +53,7 @@ export const contentData = {
       active: "Активные",
       completed: "Завершенные",
     },
+    editModal: "Редактировать заметку",
     confirmModal: {
       desc: "заметку",
       descClear: {

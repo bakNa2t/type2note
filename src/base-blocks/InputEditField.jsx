@@ -27,6 +27,14 @@ const StyledInputEditField = styled.form`
   }
 `;
 
+const Title = styled.h4`
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 2.6rem);
+  color: var(--color-spring-green-200);
+  text-shadow: 0 0 1rem var(--color-spring-green-400);
+  -webkit-text-stroke: 0.1rem var(--color-spring-green-800);
+`;
+
 function InputEditField({ note, onCloseModal }) {
   InputEditField.propTypes = {
     note: PropTypes.object,
@@ -51,16 +59,22 @@ function InputEditField({ note, onCloseModal }) {
   }
 
   return (
-    <StyledInputEditField onSubmit={handleEditInput}>
-      <InputWrapper>
-        <Input value={editNote} onChange={(e) => setEditNote(e.target.value)} />
-        <IconWrapper>
-          <Button size="lg">
-            <EnterOutlined />
-          </Button>
-        </IconWrapper>
-      </InputWrapper>
-    </StyledInputEditField>
+    <>
+      <Title>Edit note</Title>
+      <StyledInputEditField onSubmit={handleEditInput}>
+        <InputWrapper>
+          <Input
+            value={editNote}
+            onChange={(e) => setEditNote(e.target.value)}
+          />
+          <IconWrapper>
+            <Button size="lg">
+              <EnterOutlined />
+            </Button>
+          </IconWrapper>
+        </InputWrapper>
+      </StyledInputEditField>
+    </>
   );
 }
 
