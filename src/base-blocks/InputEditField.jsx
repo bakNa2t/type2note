@@ -14,13 +14,24 @@ import { editNote as editCurrentNote, selectFilteredNotes } from "./noteSlice";
 import { useNoteLang } from "../context/NoteLangContext";
 import { contentData } from "../data/content";
 
+const ModalField = styled.div`
+  width: 40rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+
+  @media screen and (max-width: 500px) {
+    width: 25rem;
+  }
+`;
+
 const StyledInputEditField = styled.form`
   display: flex;
   align-items: center;
   width: 100%;
   border-radius: 1rem;
   background-color: var(--color-ebony-800);
-  margin: 2rem 0;
+  /* margin: 2rem 0; */
   overflow: hidden;
 
   &:focus-within {
@@ -75,7 +86,7 @@ function InputEditField({ note, onCloseModal }) {
   }
 
   return (
-    <>
+    <ModalField>
       <Title>Edit note</Title>
       <StyledInputEditField onSubmit={handleEditInput}>
         <InputWrapper>
@@ -90,7 +101,7 @@ function InputEditField({ note, onCloseModal }) {
           </IconWrapper>
         </InputWrapper>
       </StyledInputEditField>
-    </>
+    </ModalField>
   );
 }
 
