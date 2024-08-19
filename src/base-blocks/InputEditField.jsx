@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { EnterOutlined } from "@ant-design/icons";
 import toast from "react-hot-toast";
 import styled from "styled-components";
@@ -10,7 +10,7 @@ import Input from "../ui-blocks/Input";
 import IconWrapper from "../ui-blocks/IconWrapper";
 import InputWrapper from "../ui-blocks/InputWrapper";
 
-import { editNote as editCurrentNote } from "./noteSlice";
+import { editNote as editCurrentNote, selectFilteredNotes } from "./noteSlice";
 import { useNoteLang } from "../context/NoteLangContext";
 import { contentData } from "../data/content";
 
@@ -46,6 +46,7 @@ function InputEditField({ note, onCloseModal }) {
   const [editNote, setEditNote] = useState(note.content);
   const dispatch = useDispatch();
 
+  const notes = useSelector(selectFilteredNotes);
   const { lang } = useNoteLang();
   const { success, error } =
     lang === "en" ? contentData.en.toast : contentData.ru.toast;
@@ -55,6 +56,14 @@ function InputEditField({ note, onCloseModal }) {
 
     if (!editNote || editNote.trim() === "") {
       toast.error(error.emptyMsg);
+      return;
+    }
+
+    if (
+      editNote === note.content ||
+      notes.some((note) => note.content === editNote)
+    ) {
+      toast.error(error.duplicateMsg);
       return;
     }
 
