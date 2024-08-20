@@ -50,6 +50,11 @@ const NoteTime = styled.span`
   font-size: clamp(1rem, 3vw, 0.8rem);
 `;
 
+const BlockBtns = styled.div`
+  display: flex;
+  gap: 0.4rem;
+`;
+
 function NoteItem({ note }) {
   NoteItem.propTypes = {
     note: PropTypes.object,
@@ -92,27 +97,29 @@ function NoteItem({ note }) {
         </NoteTextWrapper>
       )}
 
-      <Modal>
-        <Modal.Open opens="edit">
-          <Button size="sm" onClick={() => handleMarkEditNote()}>
-            <EditOutlined />
-          </Button>
-        </Modal.Open>
+      <BlockBtns>
+        <Modal>
+          <Modal.Open opens="edit">
+            <Button size="sm" onClick={() => handleMarkEditNote()}>
+              <EditOutlined />
+            </Button>
+          </Modal.Open>
 
-        <Modal.Window name="edit">
-          <InputEditField note={note} />
-        </Modal.Window>
+          <Modal.Window name="edit">
+            <InputEditField note={note} />
+          </Modal.Window>
 
-        <Modal.Open opens="delete">
-          <Button size="sm">
-            <CloseOutlined />
-          </Button>
-        </Modal.Open>
+          <Modal.Open opens="delete">
+            <Button size="sm">
+              <CloseOutlined />
+            </Button>
+          </Modal.Open>
 
-        <Modal.Window name="delete">
-          <ConfirmDelete onConfirm={() => handleDeleteNote()} desc={desc} />
-        </Modal.Window>
-      </Modal>
+          <Modal.Window name="delete">
+            <ConfirmDelete onConfirm={() => handleDeleteNote()} desc={desc} />
+          </Modal.Window>
+        </Modal>
+      </BlockBtns>
     </StyledNoteItem>
   );
 }
