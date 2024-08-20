@@ -8,6 +8,7 @@ import PropTypes from "prop-types";
 import Button from "../ui-blocks/Button";
 import Input from "../ui-blocks/Input";
 import InputWrapper from "../ui-blocks/InputWrapper";
+import ModalHeading from "../ui-blocks/ModalHeading";
 
 import { editNote as editCurrentNote, selectFilteredNotes } from "./noteSlice";
 import { useNoteLang } from "../context/NoteLangContext";
@@ -40,14 +41,6 @@ const StyledInputEditFieldForm = styled.form`
     padding: 1rem 1rem;
     gap: 1.2rem;
   }
-`;
-
-const Title = styled.h4`
-  text-align: center;
-  font-size: clamp(2rem, 5vw, 2.6rem);
-  color: var(--color-spring-green-200);
-  text-shadow: 0 0 1rem var(--color-spring-green-400);
-  -webkit-text-stroke: 0.1rem var(--color-spring-green-800);
 `;
 
 function InputEditField({ note, onCloseModal }) {
@@ -91,7 +84,7 @@ function InputEditField({ note, onCloseModal }) {
 
   return (
     <ModalField>
-      <Title>{editModal}</Title>
+      <ModalHeading as={"h4"}>{editModal}</ModalHeading>
       <StyledInputEditFieldForm onSubmit={handleEditInput}>
         <InputWrapper>
           <Input

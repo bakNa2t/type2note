@@ -1,12 +1,13 @@
 import { CheckSquareOutlined, CloseSquareOutlined } from "@ant-design/icons";
+import { useEffect } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
 import Button from "./Button";
+import ModalHeading from "./ModalHeading";
 
 import { useNoteLang } from "../context/NoteLangContext";
 import { contentData } from "../data/content";
-import { useEffect } from "react";
 
 const StyledConfirmDelete = styled.div`
   width: 40rem;
@@ -28,14 +29,6 @@ const StyledConfirmDelete = styled.div`
   @media screen and (max-width: 500px) {
     width: 25rem;
   }
-`;
-
-const ConfirmHeading = styled.div`
-  text-align: center;
-  font-size: clamp(2rem, 5vw, 2.6rem);
-  color: var(--color-spring-green-200);
-  text-shadow: 0 0 1rem var(--color-spring-green-400);
-  -webkit-text-stroke: 0.1rem var(--color-spring-green-800);
 `;
 
 function ConfirmDelete({ onConfirm, onCloseModal, desc }) {
@@ -63,10 +56,10 @@ function ConfirmDelete({ onConfirm, onCloseModal, desc }) {
 
   return (
     <StyledConfirmDelete>
-      <ConfirmHeading as={"h4"}>
+      <ModalHeading as={"h4"}>
         {modalHeading}
         {desc}
-      </ConfirmHeading>
+      </ModalHeading>
       <p>
         {message} {desc}?
       </p>

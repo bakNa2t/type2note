@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const ModalHeading = styled.h4`
+const ModalHeading = styled.div`
   text-align: center;
   font-size: clamp(2rem, 5vw, 2.6rem);
   color: var(--color-spring-green-200);
