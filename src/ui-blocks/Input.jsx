@@ -9,7 +9,8 @@ const StyledInput = styled.input`
   padding: 1rem 4.4rem 1rem 2rem;
   border: none;
   outline: none;
-  background-color: transparent;
+  border-radius: 1rem;
+  background-color: var(--color-ebony-800);
   color: var(--color-spring-green-200);
 
   &::placeholder {
@@ -22,6 +23,11 @@ const StyledInput = styled.input`
   &::selection {
     color: var(--color-spring-green-800);
     background-color: var(--color-spring-green-200);
+  }
+
+  &:focus-within {
+    outline: 0.4rem solid var(--color-ebony-400);
+    outline-offset: 2px;
   }
 `;
 
