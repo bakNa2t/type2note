@@ -53,7 +53,7 @@ export const contentData = {
       active: "Активные",
       completed: "Завершенные",
     },
-    editModal: "Редактировать заметку",
+    editModal: "Обновить заметку",
     confirmModal: {
       desc: "заметку",
       descClear: {

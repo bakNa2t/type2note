@@ -59,8 +59,10 @@ function InputEditField({ note, onCloseModal }) {
 
   const notes = useSelector(selectFilteredNotes);
   const { lang } = useNoteLang();
-  const { success, error } =
-    lang === "en" ? contentData.en.toast : contentData.ru.toast;
+  const {
+    toast: { success, error },
+    editModal,
+  } = lang === "en" ? contentData.en : contentData.ru;
 
   function handleEditInput(e) {
     e.preventDefault();
@@ -87,7 +89,7 @@ function InputEditField({ note, onCloseModal }) {
 
   return (
     <ModalField>
-      <Title>Edit note</Title>
+      <Title>{editModal}</Title>
       <StyledInputEditField onSubmit={handleEditInput}>
         <InputWrapper>
           <Input
