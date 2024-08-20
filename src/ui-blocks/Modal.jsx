@@ -16,6 +16,10 @@ const StyledModal = styled.div`
   box-shadow: 0 0 1rem 0.4rem var(--color-spring-green-700);
   padding: 3.2rem 4rem;
   transition: all 0.5s;
+
+  @media screen and (max-width: 500px) {
+    padding: 2.4rem 2rem;
+  }
 `;
 
 const Overlay = styled.div`
