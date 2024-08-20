@@ -22,7 +22,7 @@ const ModalField = styled.div`
   @media screen and (max-width: 500px) {
     width: 30rem;
   }
-  @media screen and (max-width: 321px) {
+  @media screen and (max-width: 320px) {
     width: 25rem;
   }
 `;
