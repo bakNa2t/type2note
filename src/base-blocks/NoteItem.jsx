@@ -53,6 +53,11 @@ const NoteTime = styled.span`
 const BlockBtns = styled.div`
   display: flex;
   gap: 0.4rem;
+
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+    gap: 0rem;
+  }
 `;
 
 function NoteItem({ note }) {

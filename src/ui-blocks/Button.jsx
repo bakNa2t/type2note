@@ -8,6 +8,10 @@ const sizes = {
   sm: css`
     font-size: 1.4rem;
     padding: 0.7rem;
+
+    @media screen and (max-width: 500px) {
+      padding: 0.4rem;
+    }
   `,
   md: css`
     font-size: 1.6rem;
