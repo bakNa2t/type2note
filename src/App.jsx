@@ -1,24 +1,17 @@
 import { Toaster } from "react-hot-toast";
 
-import InputField from "./base-blocks/InputField";
-import Heading from "./ui-blocks/Heading";
 import Header from "./ui-blocks/Header";
 import Footer from "./ui-blocks/Footer";
 import AppLayout from "./ui-blocks/AppLayout";
 import NoteLayout from "./ui-blocks/NoteLayout";
-import NoteField from "./base-blocks/NoteField";
-import NoteFooterMenu from "./ui-blocks/NoteFooterMenu";
-import NoteFilterWrapper from "./ui-blocks/NoteFilterWrapper";
 
 import GlobalStyles from "./styles/GlobalStyles";
-import { useResizeScreen } from "./hooks/useResizeScreen";
+
 import { DarkModeProvider } from "./context/DarkModeContext";
 import { NoteCounterProvider } from "./context/NoteCounterContext";
 import { NoteLangProvider } from "./context/NoteLangContext";
 
 function App() {
-  const isMobileSize = useResizeScreen();
-
   return (
     <DarkModeProvider>
       <NoteCounterProvider>
@@ -26,13 +19,7 @@ function App() {
           <GlobalStyles />
           <AppLayout>
             <Header />
-            <NoteLayout>
-              <Heading />
-              <InputField />
-              <NoteField />
-              <NoteFooterMenu isMobileSize={isMobileSize} />
-              {!isMobileSize && <NoteFilterWrapper />}
-            </NoteLayout>
+            <NoteLayout />
             <Footer />
           </AppLayout>
           <Toaster

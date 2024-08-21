@@ -1,7 +1,13 @@
 import styled from "styled-components";
-import PropTypes from "prop-types";
 
 import Wrapper from "./Wrapper";
+import Heading from "./Heading";
+import InputField from "../base-blocks/InputField";
+import NoteField from "../base-blocks/NoteField";
+import NoteFooterMenu from "./NoteFooterMenu";
+import NoteFilterWrapper from "./NoteFilterWrapper";
+
+import { useResizeScreen } from "../hooks/useResizeScreen";
 
 const StyledNoteLayout = styled.div`
   flex-grow: 1;
@@ -13,14 +19,18 @@ const StyledNoteLayout = styled.div`
   }
 `;
 
-function NoteLayout({ children }) {
-  NoteLayout.propTypes = {
-    children: PropTypes.node,
-  };
+function NoteLayout() {
+  const isMobileSize = useResizeScreen();
 
   return (
     <StyledNoteLayout>
-      <Wrapper>{children}</Wrapper>
+      <Wrapper>
+        <Heading />
+        <InputField />
+        <NoteField />
+        <NoteFooterMenu isMobileSize={isMobileSize} />
+        {!isMobileSize && <NoteFilterWrapper />}
+      </Wrapper>
     </StyledNoteLayout>
   );
 }
