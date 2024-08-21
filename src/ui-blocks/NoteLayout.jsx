@@ -5,7 +5,7 @@ import InputField from "../base-blocks/InputField";
 import NoteField from "../base-blocks/NoteField";
 import NoteFooterMenu from "./NoteFooterMenu";
 import NoteFilterWrapper from "./NoteFilterWrapper";
-import ModalHeading from "./ModalHeading";
+import Heading from "./Heading";
 
 import { useResizeScreen } from "../hooks/useResizeScreen";
 import { useNoteLang } from "../context/NoteLangContext";
@@ -30,7 +30,7 @@ function NoteLayout() {
   return (
     <StyledNoteLayout>
       <Wrapper>
-        <ModalHeading as={"h1"}>{appTitle}</ModalHeading>
+        <Heading as={"h1"}>{appTitle}</Heading>
         <InputField />
         <NoteField />
         <NoteFooterMenu isMobileSize={isMobileSize} />

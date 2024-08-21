@@ -4,7 +4,7 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 
 import Button from "./Button";
-import ModalHeading from "./ModalHeading";
+import Heading from "./Heading";
 
 import { useNoteLang } from "../context/NoteLangContext";
 import { contentData } from "../data/content";
@@ -56,10 +56,10 @@ function ConfirmDelete({ onConfirm, onCloseModal, desc }) {
 
   return (
     <StyledConfirmDelete>
-      <ModalHeading as={"h3"}>
+      <Heading as={"h3"}>
         {modalHeading}
         {desc}
-      </ModalHeading>
+      </Heading>
       <p>
         {message} {desc}?
       </p>

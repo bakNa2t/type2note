@@ -1,7 +1,5 @@
 import styled from "styled-components";
-
-import { useNoteLang } from "../context/NoteLangContext";
-import { contentData } from "../data/content";
+import PropType from "prop-types";
 
 const StyledHeading = styled.div`
   text-align: center;
@@ -11,11 +9,13 @@ const StyledHeading = styled.div`
   -webkit-text-stroke: 0.1rem var(--color-spring-green-800);
 `;
 
-function Heading() {
-  const { lang } = useNoteLang();
-  const { appTitle } = lang === "en" ? contentData.en : contentData.ru;
+function Heading({ children, as }) {
+  Heading.propTypes = {
+    children: PropType.node,
+    as: PropType.string,
+  };
 
-  return <StyledHeading as={"h2"}>{appTitle}</StyledHeading>;
+  return <StyledHeading as={as}>{children}</StyledHeading>;
 }
 
 export default Heading;

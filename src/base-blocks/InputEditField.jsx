@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
 import Button from "../ui-blocks/Button";
 import Input from "../ui-blocks/Input";
 import InputWrapper from "../ui-blocks/InputWrapper";
-import ModalHeading from "../ui-blocks/ModalHeading";
+import Heading from "../ui-blocks/Heading";
 
 import { editNote as editCurrentNote, selectFilteredNotes } from "./noteSlice";
 import { useNoteLang } from "../context/NoteLangContext";
@@ -84,7 +84,7 @@ function InputEditField({ note, onCloseModal }) {
 
   return (
     <ModalField>
-      <ModalHeading as={"h3"}>{editModal}</ModalHeading>
+      <Heading as={"h3"}>{editModal}</Heading>
       <StyledInputEditFieldForm onSubmit={handleEditInput}>
         <InputWrapper>
           <Input
