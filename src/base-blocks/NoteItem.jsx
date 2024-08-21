@@ -10,7 +10,7 @@ import ConfirmDelete from "../ui-blocks/ConfirmDelete";
 import CheckboxCustom from "../ui-blocks/CheckboxCustom";
 import InputEditField from "./InputEditField";
 
-import { crossNote, deleteNote, markEditNote } from "./noteSlice";
+import { crossNote, deleteNote } from "./noteSlice";
 import { useNoteLang } from "../context/NoteLangContext";
 import { contentData } from "../data/content";
 
@@ -83,10 +83,6 @@ function NoteItem({ note }) {
     dispatch(crossNote(id));
   }
 
-  function handleMarkEditNote() {
-    dispatch(markEditNote(id));
-  }
-
   return (
     <StyledNoteItem>
       <CheckboxCustom onClick={handleCrossNote} completed={completed} />
@@ -105,7 +101,7 @@ function NoteItem({ note }) {
       <BlockBtns>
         <Modal>
           <Modal.Open opens="edit">
-            <Button size="sm" onClick={() => handleMarkEditNote()}>
+            <Button size="sm">
               <EditOutlined />
             </Button>
           </Modal.Open>
