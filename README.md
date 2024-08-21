@@ -40,6 +40,7 @@ The development server will be running on http://localhost:5173. You can open th
 - [Styled Components](https://styled-components.com/)
 - [React Hot Toast](https://react-hot-toast.com/)
 - [Redux Toolkit](https://redux-toolkit.js.org/)
+- [Ant Design/icons](https://ant.design/components/icon/)
 
 click here to visit => [_**Type2Note**_](https://type2note.vercel.app/)
 
