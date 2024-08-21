@@ -20,7 +20,7 @@ const StyledConfirmDelete = styled.div`
     margin-bottom: 1.2rem;
   }
 
-  & div {
+  & div:last-child {
     display: flex;
     justify-content: flex-end;
     gap: 1.2rem;
@@ -56,7 +56,7 @@ function ConfirmDelete({ onConfirm, onCloseModal, desc }) {
 
   return (
     <StyledConfirmDelete>
-      <ModalHeading as={"h4"}>
+      <ModalHeading as={"h3"}>
         {modalHeading}
         {desc}
       </ModalHeading>

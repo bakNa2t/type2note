@@ -84,7 +84,7 @@ function InputEditField({ note, onCloseModal }) {
 
   return (
     <ModalField>
-      <ModalHeading as={"h4"}>{editModal}</ModalHeading>
+      <ModalHeading as={"h3"}>{editModal}</ModalHeading>
       <StyledInputEditFieldForm onSubmit={handleEditInput}>
         <InputWrapper>
           <Input
