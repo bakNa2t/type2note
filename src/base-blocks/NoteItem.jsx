@@ -101,7 +101,7 @@ function NoteItem({ note }) {
       <BlockBtns>
         <Modal>
           <Modal.Open opens="edit">
-            <Button size="sm">
+            <Button size="sm" border="true">
               <EditOutlined />
             </Button>
           </Modal.Open>
@@ -111,7 +111,7 @@ function NoteItem({ note }) {
           </Modal.Window>
 
           <Modal.Open opens="delete">
-            <Button size="sm">
+            <Button size="sm" border="true">
               <CloseOutlined />
             </Button>
           </Modal.Open>

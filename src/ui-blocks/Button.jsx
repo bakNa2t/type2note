@@ -65,6 +65,17 @@ const Button = styled.button`
   ${(props) => filters[props.filter]}
 
   ${(props) =>
+    props.border &&
+    css`
+      border: 0.1rem solid var(--color-spring-green-200);
+
+      &:hover {
+        border: 0.1rem solid var(--color-spring-green-700);
+        filter: drop-shadow(0 0 0.3rem var(--color-spring-green-700));
+      }
+    `}
+
+  ${(props) =>
     props.nothovered
       ? css`
           &:hover:not(:disabled) {
