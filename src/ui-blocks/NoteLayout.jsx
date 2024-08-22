@@ -24,8 +24,8 @@ const StyledNoteLayout = styled.div`
 function NoteLayout() {
   const isMobileSize = useResizeScreen();
 
-  const lang = useNoteLang();
-  const { appTitle } = lang.lang === "en" ? contentData.en : contentData.ru;
+  const { lang } = useNoteLang();
+  const { appTitle } = lang === "en" ? contentData.en : contentData.ru;
 
   return (
     <StyledNoteLayout>
