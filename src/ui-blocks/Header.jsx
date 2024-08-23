@@ -1,5 +1,6 @@
 import { MoonOutlined, SunOutlined } from "@ant-design/icons";
 import styled from "styled-components";
+import { Typewriter } from "react-simple-typewriter";
 
 import Button from "./Button";
 
@@ -65,7 +66,15 @@ function Header() {
     <StyledHeader>
       <LogoWrapper>
         <Logo src="images/logo.png" alt="logo" />
-        <LogoTitle>Type 2 Note</LogoTitle>
+        <LogoTitle>
+          Type 2{" "}
+          <Typewriter
+            words={["Note", "Store", "Use"]}
+            loop={{}}
+            cursor
+            cursorStyle="|"
+          />
+        </LogoTitle>
       </LogoWrapper>
       <ButtonWrapper>
         <Button
