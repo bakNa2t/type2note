@@ -32,6 +32,10 @@ const LogoTitle = styled.div`
   color: var(--color-spring-green-500);
   text-shadow: 0 0 1rem var(--color-spring-green-600);
   -webkit-text-stroke: 0.1rem var(--color-spring-green-600);
+
+  @media screen and (max-width: 500px) {
+    letter-spacing: 2px;
+  }
 `;
 
 const Logo = styled.img`
@@ -72,7 +76,10 @@ function Header() {
             words={["Note", "Store", "Use"]}
             loop={{}}
             cursor
-            cursorStyle="|"
+            cursorStyle=">"
+            typeSpeed={120}
+            deleteSpeed={90}
+            delaySpeed={3000}
           />
         </LogoTitle>
       </LogoWrapper>
