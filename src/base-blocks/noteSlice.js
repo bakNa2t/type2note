@@ -76,6 +76,9 @@ const noteSlice = createSlice({
     filterCompleted: (state) => {
       state.filter = "completed";
     },
+    filterUpdated: (state) => {
+      state.filter = "updated";
+    },
   },
 });
 
@@ -87,6 +90,8 @@ export function selectFilteredNotes(state) {
       return notes.filter((note) => !note.completed);
     case "completed":
       return notes.filter((note) => note.completed);
+    case "updated":
+      return notes.filter((note) => note.updated);
     default:
       return notes;
   }
@@ -115,6 +120,7 @@ export const {
   filterAll,
   filterActive,
   filterCompleted,
+  filterUpdated,
 } = noteSlice.actions;
 
 export default noteSlice.reducer;
