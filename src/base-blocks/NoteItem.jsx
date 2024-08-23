@@ -56,7 +56,7 @@ const BlockBtns = styled.div`
 
   @media screen and (max-width: 500px) {
     flex-direction: column;
-    gap: 0rem;
+    gap: 0.2rem;
   }
 `;
 
