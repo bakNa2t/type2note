@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import NoteFilter from "./NoteFilter";
+import NoteFilter from "../base-blocks/NoteFilter";
 
 import { useNoteCounter } from "../context/NoteCounterContext";
 

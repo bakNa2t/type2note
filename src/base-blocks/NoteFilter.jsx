@@ -2,13 +2,9 @@ import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
-import Button from "./Button";
+import Button from "../ui-blocks/Button";
 
-import {
-  filterActive,
-  filterAll,
-  filterCompleted,
-} from "../base-blocks/noteSlice";
+import { filterActive, filterAll, filterCompleted } from "./noteSlice";
 import { useNoteLang } from "../context/NoteLangContext";
 import { contentData } from "../data/content";
 

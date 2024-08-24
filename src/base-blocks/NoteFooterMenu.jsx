@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
-import NoteFilter from "../ui-blocks/NoteFilter";
+import NoteFilter from "./NoteFilter";
 import NoteClearBtns from "../ui-blocks/NoteClearBtns";
 
 import { selectFilteredNotes } from "./noteSlice";
