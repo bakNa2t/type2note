@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Wrapper from "./Wrapper";
 import InputField from "../base-blocks/InputField";
 import NoteField from "../base-blocks/NoteField";
-import NoteFooterMenu from "./NoteFooterMenu";
+import NoteFooterMenu from "../base-blocks/NoteFooterMenu";
 import NoteFilterWrapper from "./NoteFilterWrapper";
 import Heading from "./Heading";
 
