@@ -28,6 +28,8 @@ export const contentData = {
     hoverDesc: {
       all: "Clear all",
       completed: "Clear completed",
+      edit: "Edit",
+      delete: "Delete",
     },
     toast: {
       success: {
@@ -73,6 +75,8 @@ export const contentData = {
     hoverDesc: {
       all: "Удалить все",
       completed: "Удалить выполненные",
+      edit: "Изменить",
+      delete: "Удалить",
     },
     toast: {
       success: {
