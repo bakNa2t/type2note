@@ -72,6 +72,11 @@ function NoteItem({ note }) {
   const {
     confirmModal: { desc },
     toast: { success },
+    hoverDesc,
+    // hoverDesc: {
+    // delete: { content: hoverContentDelete },
+    // edit: { content: hoverContentEdit },
+    // },
   } = lang === "en" ? contentData.en : contentData.ru;
 
   function handleDeleteNote() {
@@ -101,7 +106,11 @@ function NoteItem({ note }) {
       <BlockBtns>
         <Modal>
           <Modal.Open opens="edit">
-            <Button size="sm" border="true">
+            <Button
+              size="sm"
+              border="true"
+              cleardesc={{ content: hoverDesc.edit }}
+            >
               <EditOutlined />
             </Button>
           </Modal.Open>
@@ -111,7 +120,11 @@ function NoteItem({ note }) {
           </Modal.Window>
 
           <Modal.Open opens="delete">
-            <Button size="sm" border="true">
+            <Button
+              size="sm"
+              border="true"
+              cleardesc={{ content: hoverDesc.delete }}
+            >
               <CloseOutlined />
             </Button>
           </Modal.Open>
