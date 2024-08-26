@@ -13,6 +13,7 @@ import InputEditField from "./InputEditField";
 import { crossNote, deleteNote } from "./noteSlice";
 import { useNoteLang } from "../context/NoteLangContext";
 import { contentData } from "../data/content";
+import { useResizeScreen } from "../hooks/useResizeScreen";
 
 const StyledNoteItem = styled.li`
   display: flex;
@@ -72,6 +73,8 @@ function NoteItem({ note }) {
   const { content, id, completed, time } = note;
   const dispatch = useDispatch();
 
+  const isMobileSize = useResizeScreen();
+
   const { lang } = useNoteLang();
   const {
     confirmModal: { desc },
@@ -109,7 +112,7 @@ function NoteItem({ note }) {
             <Button
               size="sm"
               border="true"
-              cleardesc={{ content: hoverDesc.edit }}
+              cleardesc={isMobileSize ? { content: hoverDesc.edit } : null}
             >
               <EditOutlined />
             </Button>
@@ -123,7 +126,7 @@ function NoteItem({ note }) {
             <Button
               size="sm"
               border="true"
-              cleardesc={{ content: hoverDesc.delete }}
+              cleardesc={isMobileSize ? { content: hoverDesc.delete } : null}
             >
               <CloseOutlined />
             </Button>
