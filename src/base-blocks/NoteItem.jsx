@@ -19,9 +19,13 @@ const StyledNoteItem = styled.li`
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1rem;
+  padding: 1.2rem 0.2rem;
   min-height: 3rem;
   border-bottom: 1px solid var(--color-spring-green-100);
+
+  @media screen and (max-width: 500px) {
+    padding: 0.8rem 0.2rem;
+  }
 `;
 
 const NoteTextWrapper = styled.div`
@@ -73,10 +77,6 @@ function NoteItem({ note }) {
     confirmModal: { desc },
     toast: { success },
     hoverDesc,
-    // hoverDesc: {
-    // delete: { content: hoverContentDelete },
-    // edit: { content: hoverContentEdit },
-    // },
   } = lang === "en" ? contentData.en : contentData.ru;
 
   function handleDeleteNote() {
